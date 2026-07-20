@@ -1,0 +1,111 @@
+# q4_sqlite.py
+import sqlite3
+from opentelemetry.sdk.trace.export import SpanExporter, SpanExportResult
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import SimpleSpanProcessor
+from dotenv import load_dotenv
+from openai import OpenAI
+from gitsource import GithubRepositoryDataReader
+from minsearch import Index
+from rag_helper import RAGBase
+import time
+
+load_dotenv()
+
+class SQLiteSpanExporter(SpanExporter):
+    def __init__(self, db_path="traces.db"):
+        self.conn = sqlite3.connect(db_path)
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS spans (
+                name TEXT,
+                start_time INTEGER,
+                end_time INTEGER,
+                input_tokens INTEGER,
+                output_tokens INTEGER,
+                cost REAL
+            )
+        """)
+        self.conn.commit()
+
+    def export(self, spans):
+        for span in spans:
+            attrs = dict(span.attributes or {})
+            self.conn.execute(
+                "INSERT INTO spans VALUES (?, ?, ?, ?, ?, ?)",
+                (
+                    span.name,
+                    span.start_time,
+                    span.end_time,
+                    attrs.get("input_tokens"),
+                    attrs.get("output_tokens"),
+                    attrs.get("cost"),
+                ),
+            )
+        self.conn.commit()
+        return SpanExportResult.SUCCESS
+
+    def shutdown(self):
+        self.conn.close()
+
+    def force_flush(self):
+        return True
+
+# OTel setup with SQLite exporter
+provider = TracerProvider()
+provider.add_span_processor(SimpleSpanProcessor(SQLiteSpanExporter("traces.db")))
+trace.set_tracer_provider(provider)
+tracer = trace.get_tracer("llm-zoomcamp")
+
+# Recreate index and client
+COMMIT = "8c1834d"
+reader = GithubRepositoryDataReader(
+    repo_owner="DataTalksClub",
+    repo_name="llm-zoomcamp",
+    commit_id=COMMIT,
+    allowed_extensions={"md"},
+    filename_filter=lambda path: "/lessons/" in path,
+)
+documents = [file.parse() for file in reader.read()]
+index = Index(text_fields=["content"], keyword_fields=["filename"])
+index.fit(documents)
+client = OpenAI()
+
+def calculate_cost(model, usage):
+    if "gpt-5.4-mini" in model:
+        return (usage.input_tokens * 0.15 + usage.output_tokens * 0.60) / 1_000_000
+    return 0.0
+
+class RAGTraced(RAGBase):
+    def rag(self, query):
+        with tracer.start_as_current_span("rag") as span:
+            return super().rag(query)
+    def search(self, query, num_results=5):
+        with tracer.start_as_current_span("search") as span:
+            return super().search(query, num_results)
+    def llm(self, prompt):
+        start = time.time()
+        with tracer.start_as_current_span("llm") as span:
+            response = super().llm(prompt)
+            usage = response.usage
+            cost = calculate_cost(self.model, usage)
+            span.set_attribute("input_tokens", usage.input_tokens)
+            span.set_attribute("output_tokens", usage.output_tokens)
+            span.set_attribute("cost", cost)
+            duration = time.time() - start
+            print(f"LLM duration: {duration:.2f} s")
+            return response
+
+traced_rag = RAGTraced(index=index, llm_client=client)
+
+if __name__ == "__main__":
+    query = "How does the agentic loop keep calling the model until it stops?"
+    answer = traced_rag.rag(query)
+    print("Answer:", answer[:200])
+
+    # Check which spans are in the database
+    conn = sqlite3.connect("traces.db")
+    cur = conn.cursor()
+    cur.execute("SELECT DISTINCT name FROM spans")
+    print("Span names in DB:", cur.fetchall())
+    conn.close()
