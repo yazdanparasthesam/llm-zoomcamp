@@ -1,0 +1,223 @@
+{
+  "created_at": 1784748696490.726,
+  "start_timestamp": "2026-07-22T19:31:27.815045Z",
+  "end_timestamp": "2026-07-22T19:31:33.416374Z",
+  "trace_id": "019f8b4fc1c703401263e3edc8631c0a",
+  "span_id": "31ba7925a2add2bf",
+  "kind": "span",
+  "level": 9,
+  "parent_span_id": null,
+  "span_name": "invoke_agent faq_agent",
+  "message": "faq_agent run",
+  "is_exception": false,
+  "exception_type": null,
+  "tags": [],
+  "otel_scope_name": "pydantic-ai",
+  "otel_scope_version": "2.13.0",
+  "service_name": "unknown_service",
+  "service_version": "a3a960191f0432449a9cf3c1491573b77f29d375",
+  "http_response_status_code": null,
+  "gen_ai_operation_name": "invoke_agent",
+  "gen_ai_request_model": null,
+  "gen_ai_response_model": null,
+  "gen_ai_system": null,
+  "gen_ai_usage_input_tokens": 0,
+  "gen_ai_usage_output_tokens": 0,
+  "gen_ai_response_id": null,
+  "operation_cost": null,
+  "matched_filter": true,
+  "user_columns": {},
+  "is_extra_span": false,
+  "day": "2026-07-22",
+  "duration": 5.601329133,
+  "otel_status_code": "UNSET",
+  "otel_status_message": null,
+  "otel_links": [],
+  "otel_events": [],
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "log_body": null,
+  "attributes": {
+    "agent_name": "faq_agent",
+    "final_result": "To run Ollama locally, the FAQ says:\n\n1. Install Ollama from: https://ollama.com/download  \n   - macOS: install the `.pkg`\n   - Windows: install the `.msi`\n   - Linux:\n     ```bash\n     curl -fsSL https://ollama.com/install.sh | sh\n     ```\n\n2. Start a model locally:\n   ```bash\n   ollama run llama3\n   ```\n   This downloads the model, starts it locally, and opens a chat-like interface.\n\n3. Check that the local server is running:\n   ```bash\n   curl http://localhost:11434\n   ```\n   You should get a response like:\n   ```json\n   {\"models\": [...]}\n   ```\n\n4. If you want to use it from Python:\n   ```bash\n   pip install ollama\n   ```\n\n   Example:\n   ```python\n   import ollama\n\n   response = ollama.chat(\n       model='llama3',\n       messages=[{\"role\": \"user\", \"content\": your_prompt}]\n   )\n\n   print(response['message']['content'])\n   ```\n\nIf you want, I can also help with other course-related setup questions.",
+    "gen_ai.agent.call.id": "019f8b4f-c1c2-7351-b995-e603870b7e88",
+    "gen_ai.agent.name": "faq_agent",
+    "gen_ai.aggregated_usage.input_tokens": 1615,
+    "gen_ai.aggregated_usage.output_tokens": 275,
+    "gen_ai.conversation.id": "019f8b4f-c1c2-7351-b995-e602ef34589d",
+    "gen_ai.operation.name": "invoke_agent",
+    "gen_ai.system_instructions": [
+      {
+        "type": "text",
+        "content": "You're a course teaching assistant.\nYou're given a question from a course student and your task is to answer it.\n\nIf you want to look up information, use the search function. \nUse as many keywords from the user question as possible when making first requests.\n\nMake multiple searches. First perform search, analyze the results \nand then perform more searches. \n\nThe question has to be about the course or its logistics, offtopic questions \nshouldn't be answered. If the search returns nothing, it's likely an off-topic question.\nIf you can't answer the question using FAQ, don't do it yourself. Only use the \nfacts from the FAQ database.\n\nAt the end, ask if there are other areas that the user wants to explore."
+      }
+    ],
+    "logfire.metrics": {
+      "gen_ai.client.token.usage": {
+        "details": [
+          {
+            "attributes": {
+              "gen_ai.operation.name": "chat",
+              "gen_ai.provider.name": "openai",
+              "gen_ai.request.model": "gpt-5.4-mini",
+              "gen_ai.response.model": "gpt-5.4-mini-2026-03-17",
+              "gen_ai.system": "openai",
+              "gen_ai.token.type": "input"
+            },
+            "total": 1615
+          },
+          {
+            "attributes": {
+              "gen_ai.operation.name": "chat",
+              "gen_ai.provider.name": "openai",
+              "gen_ai.request.model": "gpt-5.4-mini",
+              "gen_ai.response.model": "gpt-5.4-mini-2026-03-17",
+              "gen_ai.system": "openai",
+              "gen_ai.token.type": "output"
+            },
+            "total": 275
+          }
+        ],
+        "total": 1890
+      },
+      "operation.cost": {
+        "details": [
+          {
+            "attributes": {
+              "gen_ai.operation.name": "chat",
+              "gen_ai.provider.name": "openai",
+              "gen_ai.request.model": "gpt-5.4-mini",
+              "gen_ai.response.model": "gpt-5.4-mini-2026-03-17",
+              "gen_ai.system": "openai"
+            },
+            "total": 0.00244875
+          }
+        ],
+        "total": 0.00244875
+      }
+    },
+    "model_name": "gpt-5.4-mini",
+    "pydantic_ai.all_messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "How do I run Ollama locally?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "tool_call",
+            "id": "call_bSIBKseAQFG1ck5aYgEi7Elv",
+            "name": "search",
+            "arguments": "{\"query\":\"run Ollama locally Ollama local install usage\"}"
+          }
+        ],
+        "finish_reason": "stop"
+      },
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "id": "call_bSIBKseAQFG1ck5aYgEi7Elv",
+            "name": "search",
+            "result": [
+              {
+                "id": "1d0b969028",
+                "course": "llm-zoomcamp",
+                "section": "Module 1: RAG",
+                "question": "Ollama: How to install Ollama?",
+                "answer": "First, install Ollama by visiting [https://ollama.com/download](https://ollama.com/download) and choosing your operating system:\n\n- **macOS**: Download the `.pkg` and install it.\n- **Windows**: Download the `.msi` and install it.\n- **Linux**: Run the following command in the terminal:\n\n  ```bash\n  curl -fsSL https://ollama.com/install.sh | sh\n  ```\n\nOnce installed, open a terminal and type:\n\n```bash\nollama run llama3\n```\n\nThis command will:\n\n- Download the LLaMA 3 model (~4GB).\n- Start the model locally.\n- Open a chat-like interface where you can type questions.\n\nTo test the Ollama local server, run the following command:\n\n```bash\ncurl http://localhost:11434\n```\n\nYou should receive a response similar to:\n\n```json\n{\"models\": [...]}  \n```\n\nThen, install the Python client with:\n\n```bash\npip install ollama\n```\n\nHere is a minimal Python example:\n\n```python\nimport ollama\n\nresponse = ollama.chat(\n    model='llama3',\n    messages=[{\"role\": \"user\", \"content\": your_prompt}]\n)\n\nprint(response['message']['content'])\n```"
+              },
+              {
+                "id": "c6fc2d4d11",
+                "course": "llm-zoomcamp",
+                "section": "Module 1: RAG",
+                "question": "Connection refused error when prompting Ollama RAG",
+                "answer": "If you encounter this error while doing the homework, you can resolve it by restarting the Ollama server using the following command:\n\n```bash\n!nohup ollama serve > nohup.out 2>&1 &\n```\n\nMake sure to rerun the cell containing `ollama serve` if you stop and restart the notebook cell."
+              },
+              {
+                "id": "f442efe5b4",
+                "course": "llm-zoomcamp",
+                "section": "Module 3: Orchestration",
+                "question": "Which AI providers does Kestra support besides Gemini? Can I use Groq, Ollama, or a local model?",
+                "answer": "Kestra's AI plugin is provider-agnostic: it supports OpenAI, Gemini, Anthropic, xAI, Grok, and any OpenAI-compatible provider, including local models served through Ollama or LM Studio. You swap the provider block in a flow without changing anything else. See the [full list of supported providers](https://kestra.io/plugins/plugin-ai/provider).\n\nThe course uses Gemini because it has a generous free tier, but you are free to use any provider. The [awesome-llms list](https://github.com/DataTalksClub/llm-zoomcamp/blob/main/awesome-llms.md) in the course repo tracks free and free-tier options; Groq is a popular choice because it is OpenAI-compatible and works with both the chat completions and responses APIs.\n\nThere are two ways to use AI in Kestra:\n\n- The **AI plugin** (`io.kestra.plugin.ai`) is the generic one. It is the most flexible for switching providers, though new vendor-specific API features take a bit longer to land here.\n- The **provider-specific plugins** (e.g. `plugin-gemini`, `plugin-openai`) expose features unique to that vendor, such as Gemini video generation, before they reach the generic AI plugin.\n\nFor OpenAI-compatible providers that don't have their own plugin (DeepSeek, Groq, xAI), point the OpenAI plugin at the provider's base URL instead of the default endpoint."
+              },
+              {
+                "id": "aa310de435",
+                "course": "llm-zoomcamp",
+                "section": "Module 1: RAG",
+                "question": "Can I run the course locally instead of Codespaces?",
+                "answer": "Yes. Codespaces is just the easiest way for everyone to start with the same environment.\n\nYou can run the course locally if you are comfortable setting up Python, `uv`, Jupyter, Docker, and any other tools needed for the module.\n\nIf you run locally, make sure you document your setup and keep your environment reproducible."
+              },
+              {
+                "id": "a4adc70f41",
+                "course": "llm-zoomcamp",
+                "section": "Module 3: Orchestration",
+                "question": "Why is token usage monitored in Kestra workflows?",
+                "answer": "Token usage is tracked because it maps directly to what LLM providers charge you for, and Kestra workflows run LLM calls on a schedule or in loops where costs add up fast. The main reasons:\n\n- **Cost control**: tokens are the unit providers bill by, so tracking usage lets you budget, forecast, and spot cost spikes before they get expensive.\n- **Prompt optimization**: seeing how many tokens each prompt and response consumes helps you tighten prompts and trim output without losing quality.\n- **Guardrails**: in long-running or looping flows, usage monitoring lets you set thresholds and alerts so a runaway task doesn't quietly rack up a large bill.\n\nIn practice, each AI task in a Kestra flow can capture usage from the provider's response (for example `usage.total_tokens`), and you can surface those numbers in logs, metrics, or dashboards to keep an eye on spend per run."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "To run Ollama locally, the FAQ says:\n\n1. Install Ollama from: https://ollama.com/download  \n   - macOS: install the `.pkg`\n   - Windows: install the `.msi`\n   - Linux:\n     ```bash\n     curl -fsSL https://ollama.com/install.sh | sh\n     ```\n\n2. Start a model locally:\n   ```bash\n   ollama run llama3\n   ```\n   This downloads the model, starts it locally, and opens a chat-like interface.\n\n3. Check that the local server is running:\n   ```bash\n   curl http://localhost:11434\n   ```\n   You should get a response like:\n   ```json\n   {\"models\": [...]}\n   ```\n\n4. If you want to use it from Python:\n   ```bash\n   pip install ollama\n   ```\n\n   Example:\n   ```python\n   import ollama\n\n   response = ollama.chat(\n       model='llama3',\n       messages=[{\"role\": \"user\", \"content\": your_prompt}]\n   )\n\n   print(response['message']['content'])\n   ```\n\nIf you want, I can also help with other course-related setup questions."
+          }
+        ],
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  "attributes_json_schema": {
+    "type": "object",
+    "properties": {
+      "final_result": {
+        "type": "object"
+      },
+      "gen_ai.system_instructions": {
+        "type": "array"
+      },
+      "pydantic_ai.all_messages": {
+        "type": "array"
+      }
+    }
+  },
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_instance_id": "9f943a7a-6a72-44fe-9308-04625433e079",
+  "process_pid": 414741,
+  "otel_resource_attributes": {
+    "host.arch": "x86_64",
+    "host.name": "RMT-YZPARAST-UBT",
+    "logfire.version": "4.38.0",
+    "os.type": "linux",
+    "os.version": "6.8.0-111-generic",
+    "process.pid": 414741,
+    "process.runtime.description": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+    "process.runtime.name": "cpython",
+    "process.runtime.version": "3.10.12",
+    "service.instance.id": "9f943a7a-6a72-44fe-9308-04625433e079",
+    "service.name": "unknown_service",
+    "service.version": "a3a960191f0432449a9cf3c1491573b77f29d375",
+    "telemetry.sdk.language": "python",
+    "telemetry.sdk.name": "opentelemetry",
+    "telemetry.sdk.version": "1.43.0"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.43.0",
+  "deployment_environment": null
+}
