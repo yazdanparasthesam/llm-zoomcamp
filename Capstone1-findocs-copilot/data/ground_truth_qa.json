@@ -1,0 +1,182 @@
+[
+  {
+    "question_id": "q1",
+    "question": "What U.S. export control rules impacted NVIDIA's GPU sales to China, and which specific GPU models were restricted?",
+    "ground_truth_doc_id": "NVDA-2024-10K-RISKS",
+    "ground_truth_chunk_id": "NVDA-2024-10K-RISKS_1",
+    "reference_answer": "On October 17, 2023, the U.S. government issued interim final rules restricting exports of advanced computing items to China and Country Group D:5 without a license. Specifically, NVIDIA's A100, A800, H100, H800, L40, L40S, and RTX 4090 products were restricted.",
+    "category": "Risk Factors",
+    "ticker": "NVDA"
+  },
+  {
+    "question_id": "q2",
+    "question": "What was NVIDIA's total revenue in fiscal year 2024, and how much did the Data Center segment contribute?",
+    "ground_truth_doc_id": "NVDA-2024-10K-MDA",
+    "ground_truth_chunk_id": "NVDA-2024-10K-MDA_1",
+    "reference_answer": "NVIDIA's total revenue for fiscal year 2024 was $60.9 billion (a 126% increase YoY). The Data Center segment contributed $47.5 billion, which was up 217% year-over-year.",
+    "category": "Revenue/MD&A",
+    "ticker": "NVDA"
+  },
+  {
+    "question_id": "q3",
+    "question": "What did Jensen Huang say about the transition to the Blackwell architecture and manufacturing yields?",
+    "ground_truth_doc_id": "NVDA-2024-Q2-EARNINGS",
+    "ground_truth_chunk_id": "NVDA-2024-Q2-EARNINGS_1",
+    "reference_answer": "Jensen Huang stated that Hopper demand remains exceptionally strong and Blackwell sampling is underway with all major partners. Regarding Blackwell production schedules, a mask change was executed to improve manufacturing yield without altering functional design.",
+    "category": "Earnings Strategy",
+    "ticker": "NVDA"
+  },
+  {
+    "question_id": "q4",
+    "question": "How has the European Union's Digital Markets Act (DMA) affected Apple's iOS ecosystem?",
+    "ground_truth_doc_id": "AAPL-2024-10K-RISKS",
+    "ground_truth_chunk_id": "AAPL-2024-10K-RISKS_1",
+    "reference_answer": "Under the EU Digital Markets Act (DMA), Apple has been required to permit alternative app marketplaces, third-party payment processing, and alternative browser engines on iOS devices, which could adversely affect Services revenue and user security.",
+    "category": "Risk Factors",
+    "ticker": "AAPL"
+  },
+  {
+    "question_id": "q5",
+    "question": "What was Apple's total Services revenue in fiscal 2024, and how many paid subscriptions did they reach?",
+    "ground_truth_doc_id": "AAPL-2024-10K-MDA",
+    "ground_truth_chunk_id": "AAPL-2024-10K-MDA_1",
+    "reference_answer": "In fiscal 2024, Apple's Services revenue reached an all-time record of $96.2 billion (up 13% YoY), driven by over 1 billion paid subscriptions across the platform including App Store, iCloud, Apple Music, and AppleCare.",
+    "category": "Revenue/MD&A",
+    "ticker": "AAPL"
+  },
+  {
+    "question_id": "q6",
+    "question": "How did Tim Cook describe Apple Intelligence during the Q4 FY2024 earnings call?",
+    "ground_truth_doc_id": "AAPL-2024-Q4-EARNINGS",
+    "ground_truth_chunk_id": "AAPL-2024-Q4-EARNINGS_1",
+    "reference_answer": "Tim Cook described Apple Intelligence as 'personal intelligence that is private, integrated into our core operating systems, and powered by Apple Silicon', with a phased rollout starting in iOS 18.1.",
+    "category": "Earnings Strategy",
+    "ticker": "AAPL"
+  },
+  {
+    "question_id": "q7",
+    "question": "What are the primary operational risks Microsoft faces regarding its partnership with OpenAI?",
+    "ground_truth_doc_id": "MSFT-2024-10K-RISKS",
+    "ground_truth_chunk_id": "MSFT-2024-10K-RISKS_1",
+    "reference_answer": "Microsoft depends heavily on OpenAI's foundational models and research. Any disruption in OpenAI's operations, leadership changes, or commercial terms could negatively impact Microsoft's product roadmap for Microsoft 365 Copilot, GitHub Copilot, and Azure OpenAI Service.",
+    "category": "Risk Factors",
+    "ticker": "MSFT"
+  },
+  {
+    "question_id": "q8",
+    "question": "How much did Microsoft's Intelligent Cloud segment grow in fiscal 2024, and what drove Azure's revenue?",
+    "ground_truth_doc_id": "MSFT-2024-10K-MDA",
+    "ground_truth_chunk_id": "MSFT-2024-10K-MDA_1",
+    "reference_answer": "Microsoft's Intelligent Cloud segment grew 20% to $105.4 billion in fiscal 2024, driven by 30% growth in Azure and other cloud services due to strong demand for AI compute and Azure OpenAI services.",
+    "category": "Revenue/MD&A",
+    "ticker": "MSFT"
+  },
+  {
+    "question_id": "q9",
+    "question": "What milestone did Satya Nadella announce regarding Microsoft's AI revenue run rate in Q1 FY2025?",
+    "ground_truth_doc_id": "MSFT-2025-Q1-EARNINGS",
+    "ground_truth_chunk_id": "MSFT-2025-Q1-EARNINGS_1",
+    "reference_answer": "Satya Nadella announced that Microsoft's AI business is on track to exceed an annual revenue run rate of $10 billion next quarter, making it the fastest business in company history to reach that milestone.",
+    "category": "Earnings Strategy",
+    "ticker": "MSFT"
+  },
+  {
+    "question_id": "q10",
+    "question": "What emerging Chinese EV competitors did Tesla highlight in its FY2024 10-K risk factors?",
+    "ground_truth_doc_id": "TSLA-2024-10K-RISKS",
+    "ground_truth_chunk_id": "TSLA-2024-10K-RISKS_1",
+    "reference_answer": "Tesla highlighted escalating competition from traditional automotive manufacturers and emerging Chinese EV competitors such as BYD and NIO, which create pricing pressures and impact automotive gross margins.",
+    "category": "Risk Factors",
+    "ticker": "TSLA"
+  },
+  {
+    "question_id": "q11",
+    "question": "How much did Tesla's Energy Generation and Storage revenue grow in fiscal 2024?",
+    "ground_truth_doc_id": "TSLA-2024-10K-MDA",
+    "ground_truth_chunk_id": "TSLA-2024-10K-MDA_1",
+    "reference_answer": "Tesla's Energy Generation and Storage revenue grew 53% year-over-year to $9.2 billion in fiscal 2024, driven by record deployments of Megapack and Powerwall storage systems totaling over 15.3 GWh.",
+    "category": "Revenue/MD&A",
+    "ticker": "TSLA"
+  },
+  {
+    "question_id": "q12",
+    "question": "What is the target volume production year and expected cost for Tesla's Cybercab robotaxi?",
+    "ground_truth_doc_id": "TSLA-2024-Q3-EARNINGS",
+    "ground_truth_chunk_id": "TSLA-2024-Q3-EARNINGS_1",
+    "reference_answer": "Elon Musk stated that volume production for the Cybercab autonomous robotaxi is targeted for 2026, with an expected vehicle cost below $30,000 without pedals or steering wheels.",
+    "category": "Earnings Strategy",
+    "ticker": "TSLA"
+  },
+  {
+    "question_id": "q13",
+    "question": "What antitrust court ruling did Alphabet face in August 2024 regarding search advertising?",
+    "ground_truth_doc_id": "GOOGL-2024-10K-RISKS",
+    "ground_truth_chunk_id": "GOOGL-2024-10K-RISKS_1",
+    "reference_answer": "In August 2024, a U.S. federal court ruled in DOJ v. Google that Google maintained an illegal monopoly in general search services and search text advertising, which could lead to remedies restricting distribution agreements with Apple and Samsung.",
+    "category": "Risk Factors",
+    "ticker": "GOOGL"
+  },
+  {
+    "question_id": "q14",
+    "question": "What was Google Cloud's revenue and operating income in fiscal year 2024?",
+    "ground_truth_doc_id": "GOOGL-2024-10K-MDA",
+    "ground_truth_chunk_id": "GOOGL-2024-10K-MDA_1",
+    "reference_answer": "In fiscal year 2024, Google Cloud revenue increased 30% year-over-year to $43.0 billion, and operating income reached $6.2 billion (up from $1.7 billion in 2023).",
+    "category": "Revenue/MD&A",
+    "ticker": "GOOGL"
+  },
+  {
+    "question_id": "q15",
+    "question": "How much has Alphabet reduced the unit cost of AI Overview queries in Google Search?",
+    "ground_truth_doc_id": "GOOGL-2024-Q3-EARNINGS",
+    "ground_truth_chunk_id": "GOOGL-2024-Q3-EARNINGS_1",
+    "reference_answer": "Sundar Pichai emphasized that Google has reduced the unit cost of AI Overview queries by over 70% through hardware and algorithmic optimizations on custom TPUs (TPU v5p and Trillium).",
+    "category": "Earnings Strategy",
+    "ticker": "GOOGL"
+  },
+  {
+    "question_id": "q16",
+    "question": "What foundry does NVIDIA primarily rely on for manufacturing its semiconductor wafers?",
+    "ground_truth_doc_id": "NVDA-2024-10K-RISKS",
+    "ground_truth_chunk_id": "NVDA-2024-10K-RISKS_1",
+    "reference_answer": "NVIDIA relies primarily on Taiwan Semiconductor Manufacturing Company Limited (TSMC) to manufacture its semiconductor wafers, making it vulnerable to Taiwan Strait geopolitical tensions or CoWoS packaging shortages.",
+    "category": "Risk Factors",
+    "ticker": "NVDA"
+  },
+  {
+    "question_id": "q17",
+    "question": "What was Apple's gross margin in fiscal 2024, and what contributed to this expansion?",
+    "ground_truth_doc_id": "AAPL-2024-10K-MDA",
+    "ground_truth_chunk_id": "AAPL-2024-10K-MDA_1",
+    "reference_answer": "Apple's gross margin expanded to 46.2% in fiscal 2024, supported by a higher Services revenue mix and product cost efficiencies.",
+    "category": "Revenue/MD&A",
+    "ticker": "AAPL"
+  },
+  {
+    "question_id": "q18",
+    "question": "How much did Microsoft spend on capital expenditures in fiscal year 2024, and what was it spent on?",
+    "ground_truth_doc_id": "MSFT-2024-10K-MDA",
+    "ground_truth_chunk_id": "MSFT-2024-10K-MDA_1",
+    "reference_answer": "Microsoft spent $55.7 billion on capital expenditures in fiscal 2024, reflecting massive investments in AI data centers, GPUs, and cloud servers to support future Azure demand.",
+    "category": "Revenue/MD&A",
+    "ticker": "MSFT"
+  },
+  {
+    "question_id": "q19",
+    "question": "What was Tesla's automotive gross margin excluding regulatory credits in fiscal 2024?",
+    "ground_truth_doc_id": "TSLA-2024-10K-MDA",
+    "ground_truth_chunk_id": "TSLA-2024-10K-MDA_1",
+    "reference_answer": "Tesla's automotive gross margin excluding regulatory credits declined to 16.2% in fiscal 2024 (down from 18.5% in 2023), reflecting price reductions across Model 3 and Model Y vehicles.",
+    "category": "Revenue/MD&A",
+    "ticker": "TSLA"
+  },
+  {
+    "question_id": "q20",
+    "question": "What was Alphabet's consolidated total revenue in fiscal year 2024?",
+    "ground_truth_doc_id": "GOOGL-2024-10K-MDA",
+    "ground_truth_chunk_id": "GOOGL-2024-10K-MDA_1",
+    "reference_answer": "Alphabet's consolidated revenues for fiscal year 2024 were $331.1 billion, representing a 15% increase compared to $288.8 billion in fiscal 2023.",
+    "category": "Revenue/MD&A",
+    "ticker": "GOOGL"
+  }
+]

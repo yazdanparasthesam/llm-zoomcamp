@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: findocs-app
+  namespace: default
+  labels:
+    app: findocs-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: findocs-app
+  template:
+    metadata:
+      labels:
+        app: findocs-app
+    spec:
+      containers:
+        - name: findocs-app
+          image: findocs-app:latest # Or your DockerHub/cloud ECR tag
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501
+          envFrom:
+            - configMapRef:
+                name: findocs-config
+            - secretRef:
+                name: findocs-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: findocs-app
+  namespace: default
+spec:
+  selector:
+    app: findocs-app
+  ports:
+    - protocol: TCP
+      port: 8501
+      targetPort: 8501
+  type: LoadBalancer # Use NodePort or LoadBalancer for external access

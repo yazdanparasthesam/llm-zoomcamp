@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: findocs-elasticsearch
+  namespace: default
+  labels:
+    app: findocs-elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: findocs-elasticsearch
+  template:
+    metadata:
+      labels:
+        app: findocs-elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: elasticsearch:8.11.4
+          ports:
+            - containerPort: 9200
+          env:
+            - name: discovery.type
+              value: "single-node"
+            - name: xpack.security.enabled
+              value: "false"
+            - name: ES_JAVA_OPTS
+              value: "-Xms512m -Xmx512m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: findocs-elasticsearch
+  namespace: default
+spec:
+  selector:
+    app: findocs-elasticsearch
+  ports:
+    - protocol: TCP
+      port: 9200
+      targetPort: 9200
+  type: ClusterIP

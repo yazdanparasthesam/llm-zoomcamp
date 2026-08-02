@@ -1,0 +1,35 @@
+{
+  "Analyst Prompt (Default)": {
+    "relevant_percent": 100.0,
+    "partially_relevant_percent": 0.0,
+    "non_relevant_percent": 0.0,
+    "mean_relevance_score": 1.0,
+    "counts": {
+      "RELEVANT": 20,
+      "PARTIALLY_RELEVANT": 0,
+      "NON_RELEVANT": 0
+    }
+  },
+  "Concise Auditor Prompt": {
+    "relevant_percent": 100.0,
+    "partially_relevant_percent": 0.0,
+    "non_relevant_percent": 0.0,
+    "mean_relevance_score": 1.0,
+    "counts": {
+      "RELEVANT": 20,
+      "PARTIALLY_RELEVANT": 0,
+      "NON_RELEVANT": 0
+    }
+  },
+  "Strategic Advisor Prompt": {
+    "relevant_percent": 100.0,
+    "partially_relevant_percent": 0.0,
+    "non_relevant_percent": 0.0,
+    "mean_relevance_score": 1.0,
+    "counts": {
+      "RELEVANT": 20,
+      "PARTIALLY_RELEVANT": 0,
+      "NON_RELEVANT": 0
+    }
+  }
+}

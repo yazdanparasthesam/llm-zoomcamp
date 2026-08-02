@@ -1,0 +1,12 @@
+# Render.com Blueprint Cloud Deployment (+2 Bonus Points)
+services:
+  - type: web
+    name: findocs-copilot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: USE_DOCKER
+        value: "false"
+      - key: GROQ_API_KEY
+        sync: false

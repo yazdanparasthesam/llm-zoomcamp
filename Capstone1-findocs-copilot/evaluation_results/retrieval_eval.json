@@ -1,0 +1,26 @@
+{
+  "Text Search (BM25)": {
+    "doc_hit_rate@5": 1.0,
+    "doc_mrr@5": 0.95,
+    "chunk_hit_rate@5": 1.0,
+    "chunk_mrr@5": 0.8392
+  },
+  "Vector Search (Cosine)": {
+    "doc_hit_rate@5": 1.0,
+    "doc_mrr@5": 1.0,
+    "chunk_hit_rate@5": 1.0,
+    "chunk_mrr@5": 0.95
+  },
+  "Hybrid Search (RRF)": {
+    "doc_hit_rate@5": 1.0,
+    "doc_mrr@5": 0.95,
+    "chunk_hit_rate@5": 1.0,
+    "chunk_mrr@5": 0.875
+  },
+  "Hybrid + Re-ranking (Best Practice)": {
+    "doc_hit_rate@5": 1.0,
+    "doc_mrr@5": 0.9417,
+    "chunk_hit_rate@5": 1.0,
+    "chunk_mrr@5": 0.875
+  }
+}

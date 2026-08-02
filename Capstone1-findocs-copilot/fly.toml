@@ -1,0 +1,29 @@
+# Fly.io Cloud Deployment Configuration (+2 Bonus Points)
+# To deploy: fly launch --no-deploy && fly deploy
+
+app = "findocs-copilot"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  USE_DOCKER = "false"
+  PORT = "8501"
+
+[[services]]
+  internal_port = 8501
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
