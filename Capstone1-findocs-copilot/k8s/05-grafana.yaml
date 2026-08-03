@@ -28,6 +28,23 @@ spec:
                   key: GF_SECURITY_ADMIN_PASSWORD
             - name: GF_USERS_ALLOW_SIGN_UP
               value: "false"
+          volumeMounts:
+            - name: grafana-datasources
+              mountPath: /etc/grafana/provisioning/datasources
+            - name: grafana-dashboards-provider
+              mountPath: /etc/grafana/provisioning/dashboards
+            - name: grafana-dashboard-json
+              mountPath: /var/lib/grafana/dashboards
+      volumes:
+        - name: grafana-datasources
+          configMap:
+            name: findocs-grafana-datasources
+        - name: grafana-dashboards-provider
+          configMap:
+            name: findocs-grafana-dashboards-provider
+        - name: grafana-dashboard-json
+          configMap:
+            name: findocs-grafana-dashboard-json
 ---
 apiVersion: v1
 kind: Service
@@ -41,4 +58,4 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-  type: LoadBalancer # Or NodePort for local Minikube/Kind testing
+  type: LoadBalancer
