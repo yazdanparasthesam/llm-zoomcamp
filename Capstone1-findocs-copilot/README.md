@@ -387,6 +387,7 @@ findocs-copilot/
 │   ├── 03-elasticsearch.yaml
 │   ├── 04-app.yaml
 │   ├── 05-grafana.yaml
+│   ├── 06-grafana-config.yaml
 │   └── README-k8s.md
 ├── terraform/                  # Terraform Infrastructure-as-Code
 │   ├── main.tf
