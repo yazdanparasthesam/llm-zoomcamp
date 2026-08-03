@@ -530,7 +530,7 @@ We logged into Grafana 10.2 (`admin` / `admin`) on `http://localhost:3000`, conf
 
 ---
 
-### Step 9: Kubernetes Deployment (Kind & Minikube) & Troubleshooting Walkthrough (`k8s/`)
+### Step 9: Kubernetes Deployment (Kind) & Troubleshooting Walkthrough (`k8s/`)
 We deployed FinDocs Copilot to Kubernetes using **Kind (Kubernetes in Docker)** and documented real-world troubleshooting steps:
 1. **Cluster Creation & Image Loading**: Created `findocs-cluster` (`kind create cluster --name findocs-cluster`) and loaded the locally built image (`kind load docker-image findocs-app:latest --name findocs-cluster`).
 2. **Grafana ConfigMap Automation**: Created `k8s/06-grafana-config.yaml` to embed the Postgres datasource and dashboard JSON into Kubernetes ConfigMaps.
