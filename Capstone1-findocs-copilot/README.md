@@ -442,7 +442,6 @@ We extracted the project archive (`unzip findocs-copilot.zip`) and verified the 
 
 * **Screenshot Reference**:  
   ![Step 1 - Unzip & Directory Structure](docs/images/Screenshot%20from%202026-08-03%2013-27-26.png)  
-  ![Step 1 - Detailed File Listing](docs/images/Screenshot%20from%202026-08-03%2013-27-47.png)
 
 ---
 
@@ -452,9 +451,8 @@ To isolate project dependencies on Ubuntu Linux, we created a virtual environmen
 * **Screenshot Reference**:  
   ![Step 2 - Virtual Environment Setup](docs/images/Screenshot%20from%202026-08-03%2013-28-09.png)  
   ![Step 2 - Pip Installation Part 1](docs/images/Screenshot%20from%202026-08-03%2013-28-33.png)  
-  ![Step 2 - Pip Installation Part 2](docs/images/Screenshot%20from%2026-08-03%2013-28-50.png)  
-  ![Step 2 - Pip Installation Part 3](docs/images/Screenshot%20from%202026-08-03%2013-29-06.png)  
-  ![Step 2 - Pip Installation Complete](docs/images/Screenshot%20from%202026-08-03%2013-29-24.png)
+  ![Step 2 - Pip Installation Part 2](docs/images/Screenshot%20from%2026-08-03%2013-39-09.png)  
+
 
 ---
 
@@ -483,7 +481,6 @@ We ran the automated testing suite (`make test` / `pytest tests/ -v`), verifying
 
 * **Screenshot Reference**:
   ![Step 5 - PyTest Suite Execution](docs/images/Screenshot%20from%202026-08-03%2013-37-14.png) 
-  ![Step 5 - PyTest Suite Execution](docs/images/Screenshot%20from%202026-08-03%2013-41-19.png)
 
 ---
 
@@ -494,8 +491,9 @@ We launched the web interface (`make run` / `streamlit run app.py --server.port=
 * **User Feedback Logging**: Submitting thumbs-up/down (`+1`/`-1`) feedback and inspecting live database statistics.
 
 * **Screenshot Reference**:  
-  ![Step 6 - Launching Streamlit Server](docs/images/Screenshot%20from%202026-08-03%2013-43-21.png)  
-  ![Step 6 - Streamlit Home View](docs/images/Screenshot%20from%202026-08-03%2013-44-09.png)  
+  ![Step 6 - Launching Streamlit Server](docs/images/Screenshot%20from%202026-08-03%2013-39-09.png)
+  ![Step 6 - Streamlit Home View1](docs/images/Screenshot%20from%202026-08-03%2013-43-21.png)  
+  ![Step 6 - Streamlit Home View2](docs/images/Screenshot%20from%202026-08-03%2013-44-09.png)  
   ![Step 6 - Multimodal Audio Player](docs/images/Screenshot%20from%202026-08-03%2013-44-17.png)  
   ![Step 6 - Financial Chat Input](docs/images/Screenshot%20from%202026-08-03%2013-44-21.png)  
   ![Step 6 - AI Analyst Assessment & Citations](docs/images/Screenshot%20from%202026-08-03%2013-45-18.png)  
@@ -514,7 +512,9 @@ To satisfy the **20/20 Containerization** requirement, we executed `sudo make do
   ![Step 7 - Docker Compose Startup](docs/images/Screenshot%20from%202026-08-03%2016-12-12.png)  
   ![Step 7 - Container Health Verification](docs/images/Screenshot%20from%202026-08-03%2016-12-43.png)  
   ![Step 7 - Docker Compose Status](docs/images/Screenshot%20from%202026-08-03%2018-33-48.png)  
-  ![Step 7 - Running Services Overview](docs/images/Screenshot%20from%202026-08-03%2018-34-01.png)
+  ![Step 7 - Running Services Overview1](docs/images/Screenshot%20from%202026-08-03%2018-34-01.png)
+  ![Step 7 - Running Services Overview2](docs/images/Screenshot%20from%202026-08-03%2018-34-10.png)  
+
 
 ---
 
@@ -522,13 +522,11 @@ To satisfy the **20/20 Containerization** requirement, we executed `sudo make do
 We logged into Grafana 10.2 (`admin` / `admin`) on `http://localhost:3000`, confirming that PostgreSQL was auto-provisioned as the datasource and that **FinDocs Copilot — RAG Monitoring Dashboard** was automatically loaded. We verified all 6 real-time observability panels, including total query volume, latency gauges, relevance distributions, user feedback ratios, and per-company ticker distributions (`NVDA`, `AAPL`, `MSFT`, `TSLA`, `GOOGL`).
 
 * **Screenshot Reference**:  
-  ![Step 8 - Grafana Dashboard Overview](docs/images/Screenshot%20from%202026-08-03%2018-34-10.png)  
   ![Step 8 - Grafana Telemetry Panels 1-4](docs/images/Screenshot%20from%202026-08-03%2018-34-23.png)  
-  ![Step 8 - Grafana SQL Query Inspector](docs/images/Screenshot%20from%202026-08-03%2018-45-57.png)  
-  ![Step 8 - Ticker Query Distribution](docs/images/Screenshot%20from%202026-08-03%2019-00-33.png)  
-  ![Step 8 - Grafana Live Traffic Verification](docs/images/Screenshot%20from%202026-08-03%2019-18-49.png)  
-  ![Step 8 - Grafana Per-Company Ticker Bars](docs/images/Screenshot%20from%202026-08-03%2019-42-54.png)  
-  ![Step 8 - Grafana Final Observability View](docs/images/Screenshot%20from%202026-08-03%2019-43-04.png)
+  ![Step 8 - Grafana SQL Query Inspector](docs/images/Screenshot%20from%202026-08-03%2018-45-57.png)
+  ![Step 8 - bring down the docker](docs/images/Screenshot%20from%202026-08-03%2019-00-33.png)  
+
+
 
 ---
 
@@ -543,20 +541,22 @@ We deployed FinDocs Copilot to Kubernetes using **Kind (Kubernetes in Docker)** 
    - Fixed `/home/user/.kube/config` permission mismatches after sudo executions using `sudo chown -R $USER:$USER ~/.kube`.
    - Handled Docker MTU / TLS handshake timeouts by cleanly recreating the Kind cluster or utilizing **Minikube (`minikube start --driver=docker`)** as an automated fallback.
 
-* **Screenshot Reference**:  
-  ![Step 9 - Kubernetes Cluster Creation](docs/images/Screenshot%20from%202026-08-03%2019-45-52.png)  
-  ![Step 9 - Remote RBAC Forbidden Diagnosis](docs/images/Screenshot%20from%202026-08-03%2019-55-23.png)  
-  ![Step 9 - Rancher UI Workloads View](docs/images/Screenshot%20from%202026-08-03%2020-17-09.png)  
-  ![Step 9 - Rancher UI Deployment Selection](docs/images/Screenshot%20from%202026-08-03%2020-17-26.png)  
-  ![Step 9 - Rancher UI Workloads Cleanup](docs/images/Screenshot%20from%202026-08-03%2020-17-42.png)  
-  ![Step 9 - Kind Cluster Context Verification](docs/images/Screenshot%20from%202026-08-03%2023-37-24.png)  
-  ![Step 9 - Kind Docker Image Loading](docs/images/Screenshot%20from%202026-08-03%2023-40-43.png)  
-  ![Step 9 - Kind Manifest Application](docs/images/Screenshot%20from%202026-08-03%2023-40-52.png)  
-  ![Step 9 - Kind Pod Health Status](docs/images/Screenshot%20from%202026-08-03%2023-41-31.png)  
-  ![Step 9 - Kubeconfig Ownership Restoration](docs/images/Screenshot%20from%202026-08-03%2023-44-02.png)  
-  ![Step 9 - Kind TLS Handshake Diagnosis](docs/images/Screenshot%20from%202026-08-03%2023-44-09.png)  
-  ![Step 9 - Kind Cluster Recreation](docs/images/Screenshot%20from%202026-08-03%2023-44-29.png)  
-  ![Step 9 - Kubernetes Final Running State](docs/images/Screenshot%20from%202026-08-03%2023-44-37.png)
+* **Screenshot Reference**:
+  ![Step 9 - create kind cluster](docs/images/Screenshot%20from%202026-08-03%2019-18-49.png)  
+  ![Step 9 - see the docker image](docs/images/Screenshot%20from%202026-08-03%2019-42-54.png)  
+  ![Step 9 - load docker image to kind cluster](docs/images/Screenshot%20from%202026-08-03%2019-43-04.png)
+  ![Step 9 - add kind cluster to kubectl](docs/images/Screenshot%20from%202026-08-03%2019-55-23.png)  
+  ![Step 9 - kubectl get nodes command](docs/images/Screenshot%20from%202026-08-03%2020-17-09.png)  
+  ![Step 9 - get available contexts](docs/images/Screenshot%20from%202026-08-03%2020-17-26.png)  
+  ![Step 9 - cluster-info and appy k8s manifests](docs/images/Screenshot%20from%202026-08-03%2020-17-42.png)  
+  ![Step 9 - kubectl get pods command](docs/images/Screenshot%20from%202026-08-03%2023-37-24.png)  
+  ![Step 9 - kubectl port-forward app](docs/images/Screenshot%20from%202026-08-03%2023-40-43.png)  
+  ![Step 9 - kubectl port-forward grafana](docs/images/Screenshot%20from%202026-08-03%2023-40-52.png)  
+  ![Step 9 - check app ui](docs/images/Screenshot%20from%202026-08-03%2023-41-31.png)  
+  ![Step 9 - vote in app ui](docs/images/Screenshot%20from%202026-08-03%2023-44-02.png)  
+  ![Step 9 - check grafana dashboard](docs/images/Screenshot%20from%202026-08-03%2023-44-09.png)  
+  ![Step 9 - Kind Cluster pods logs app](docs/images/Screenshot%20from%202026-08-03%2023-44-29.png)  
+  ![Step 9 - Kind Cluster pods logs grafana](docs/images/Screenshot%20from%202026-08-03%2023-44-37.png)
 
 ---
 
