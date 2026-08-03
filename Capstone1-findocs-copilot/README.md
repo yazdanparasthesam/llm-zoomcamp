@@ -461,7 +461,8 @@ To isolate project dependencies on Ubuntu Linux, we created a virtual environmen
 ### Step 3: Module 07 Hierarchical Chunking & Ingestion (`make ingest`)
 We executed `make ingest` (`python3 -m src.ingest`), which processed the curated 5-company SEC corpus (`data/sec_10k_earnings_dataset.json`), segmented 15 parent documents into 30 child chunks (`doc_id` + `chunk_id`) per **Module 07**, generated 64-dimensional dense vectors via TruncatedSVD / TF-IDF, and saved the searchable index to `data/index_cache.json`.
 
-* **Screenshot Reference**:  
+* **Screenshot Reference**:
+  ![Step 3 - Ingestion & Chunking Execution](docs/images/Screenshot%20from%202026-08-03%2013-29-06.png)  
   ![Step 3 - Ingestion & Chunking Execution](docs/images/Screenshot%20from%202026-08-03%2013-37-14.png)  
   ![Step 3 - Index Cache Generation](docs/images/Screenshot%20from%202026-08-03%2013-39-09.png)
 
@@ -473,14 +474,15 @@ We executed `make eval` (`python3 -m src.eval_retrieval` and `python3 -m src.eva
 2. **LLM RAG Output Evaluation**: 100.0% RELEVANT scores using **LLM-as-a-Judge** across Analyst, Concise Auditor, and Strategic Advisor prompt strategies.
 
 * **Screenshot Reference**:  
-  ![Step 4 - Retrieval & RAG Evaluation Benchmarks](docs/images/Screenshot%20from%202026-08-03%2013-39-38.png)
+  ![Step 4 - Retrieval & RAG Evaluation Benchmarks](docs/images/Screenshot%20from%202026-08-03%2013-29-24.png)
 
 ---
 
 ### Step 5: PyTest Unit Test Suite Execution (`make test`)
 We ran the automated testing suite (`make test` / `pytest tests/ -v`), verifying that all 5 unit tests (`test_module07_chunking`, `test_generate_embeddings`, `test_rag_pipeline_execution`, `test_query_rewriting`, `test_hybrid_rerank_search`) passed cleanly in ~1.60 seconds.
 
-* **Screenshot Reference**:  
+* **Screenshot Reference**:
+  ![Step 5 - PyTest Suite Execution](docs/images/Screenshot%20from%202026-08-03%2013-37-14.png) 
   ![Step 5 - PyTest Suite Execution](docs/images/Screenshot%20from%202026-08-03%2013-41-19.png)
 
 ---
