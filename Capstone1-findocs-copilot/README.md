@@ -535,11 +535,7 @@ We deployed FinDocs Copilot to Kubernetes using **Kind (Kubernetes in Docker)** 
 1. **Cluster Creation & Image Loading**: Created `findocs-cluster` (`kind create cluster --name findocs-cluster`) and loaded the locally built image (`kind load docker-image findocs-app:latest --name findocs-cluster`).
 2. **Grafana ConfigMap Automation**: Created `k8s/06-grafana-config.yaml` to embed the Postgres datasource and dashboard JSON into Kubernetes ConfigMaps.
 3. **Manifest Application & Port Forwarding**: Applied all manifests (`kubectl apply -f k8s/`) and port-forwarded Streamlit (`kubectl port-forward svc/findocs-app 8501:8501`) and Grafana (`kubectl port-forward svc/findocs-grafana 3000:3000`).
-4. **Troubleshooting & RBAC Cleanup**:
-   - Resolved `RBAC Forbidden` errors when `kubectl` was pointing to remote enterprise Rancher clusters (`prod-dc1`) by switching context to `kind-findocs-cluster`.
-   - Safely cleaned up remote Deployments using `kubectl delete -f k8s/ --ignore-not-found` or via the Rancher UI `[ Delete ]` action.
-   - Fixed `/home/user/.kube/config` permission mismatches after sudo executions using `sudo chown -R $USER:$USER ~/.kube`.
-   - Handled Docker MTU / TLS handshake timeouts by cleanly recreating the Kind cluster or utilizing **Minikube (`minikube start --driver=docker`)** as an automated fallback.
+
 
 * **Screenshot Reference**:
   ![Step 9 - create kind cluster](docs/images/Screenshot%20from%202026-08-03%2019-18-49.png)  
