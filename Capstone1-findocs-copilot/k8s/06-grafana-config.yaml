@@ -1,0 +1,114 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: findocs-grafana-datasources
+  namespace: default
+data:
+  datasource.yml: |
+    apiVersion: 1
+    datasources:
+      - name: PostgreSQL
+        type: postgres
+        access: proxy
+        url: findocs-postgres:5432
+        user: postgres
+        secureJsonData:
+          password: postgres
+        jsonData:
+          database: findocs_db
+          sslmode: disable
+          postgresVersion: 1600
+        isDefault: true
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: findocs-grafana-dashboards-provider
+  namespace: default
+data:
+  dashboard.yml: |
+    apiVersion: 1
+    providers:
+      - name: 'Default'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        updateIntervalSeconds: 10
+        allowUiUpdates: true
+        options:
+          path: /var/lib/grafana/dashboards
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: findocs-grafana-dashboard-json
+  namespace: default
+data:
+  findocs_dashboard.json: |
+    {
+      "annotations": { "list": [] },
+      "editable": true,
+      "fiscalYearStartMonth": 0,
+      "graphTooltip": 0,
+      "id": null,
+      "links": [],
+      "liveNow": false,
+      "panels": [
+        {
+          "datasource": { "type": "postgres", "uid": "PostgreSQL" },
+          "gridPos": { "h": 6, "w": 4, "x": 0, "y": 0 },
+          "id": 1,
+          "title": "1. Total Logged Queries",
+          "type": "stat",
+          "targets": [{ "datasource": { "type": "postgres", "uid": "PostgreSQL" }, "format": "table", "rawQuery": true, "rawSql": "SELECT COUNT(*) as \"Total Queries\" FROM conversations", "refId": "A" }]
+        },
+        {
+          "datasource": { "type": "postgres", "uid": "PostgreSQL" },
+          "gridPos": { "h": 6, "w": 4, "x": 4, "y": 0 },
+          "id": 2,
+          "title": "2. Average Response Latency (ms)",
+          "type": "gauge",
+          "targets": [{ "datasource": { "type": "postgres", "uid": "PostgreSQL" }, "format": "table", "rawQuery": true, "rawSql": "SELECT AVG(latency_ms) as \"Avg Latency (ms)\" FROM conversations", "refId": "A" }]
+        },
+        {
+          "datasource": { "type": "postgres", "uid": "PostgreSQL" },
+          "gridPos": { "h": 6, "w": 8, "x": 8, "y": 0 },
+          "id": 3,
+          "options": { "pieType": "donut" },
+          "title": "3. LLM-as-a-Judge Relevance Score Distribution",
+          "type": "piechart",
+          "targets": [{ "datasource": { "type": "postgres", "uid": "PostgreSQL" }, "format": "table", "rawQuery": true, "rawSql": "SELECT relevance_label as \"Label\", COUNT(*) as \"Count\" FROM conversations GROUP BY relevance_label", "refId": "A" }]
+        },
+        {
+          "datasource": { "type": "postgres", "uid": "PostgreSQL" },
+          "gridPos": { "h": 6, "w": 8, "x": 16, "y": 0 },
+          "id": 4,
+          "title": "4. User Feedback Ratio (+1 / -1)",
+          "type": "piechart",
+          "targets": [{ "datasource": { "type": "postgres", "uid": "PostgreSQL" }, "format": "table", "rawQuery": true, "rawSql": "SELECT CASE WHEN feedback_value = 1 THEN 'Positive (+1)' ELSE 'Negative (-1)' END as \"Feedback\", COUNT(*) as \"Count\" FROM feedback GROUP BY feedback_value", "refId": "A" }]
+        },
+        {
+          "datasource": { "type": "postgres", "uid": "PostgreSQL" },
+          "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+          "id": 5,
+          "title": "5. Query Volume Over Time",
+          "type": "timeseries",
+          "targets": [{ "datasource": { "type": "postgres", "uid": "PostgreSQL" }, "format": "table", "rawQuery": true, "rawSql": "SELECT DATE_TRUNC('hour', timestamp) as \"Time\", COUNT(*) as \"Queries\" FROM conversations GROUP BY DATE_TRUNC('hour', timestamp) ORDER BY \"Time\"", "refId": "A" }]
+        },
+        {
+          "datasource": { "type": "postgres", "uid": "PostgreSQL" },
+          "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+          "id": 6,
+          "options": { "orientation": "horizontal" },
+          "title": "6. Queries by Company / Ticker",
+          "type": "barchart",
+          "targets": [{ "datasource": { "type": "postgres", "uid": "PostgreSQL" }, "format": "table", "rawQuery": true, "rawSql": "SELECT COALESCE(ticker, 'General/All') as \"Ticker\", COUNT(*) as \"Queries\" FROM conversations GROUP BY ticker ORDER BY \"Queries\" DESC", "refId": "A" }]
+        }
+      ],
+      "refresh": "5s",
+      "schemaVersion": 38,
+      "style": "dark",
+      "title": "FinDocs Copilot — RAG Monitoring Dashboard",
+      "version": 1
+    }
