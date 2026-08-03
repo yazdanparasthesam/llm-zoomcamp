@@ -345,6 +345,8 @@ We built an **offline resilience layer**: if Docker or Elasticsearch is unavaila
 
 ```text
 findocs-copilot/
+├── pytest.ini
+├── .gitignore
 ├── app.py                      # Streamlit interactive web interface & analytics UI
 ├── docker-compose.yml          # Complete container orchestration (App, Elastic, Postgres, Grafana)
 ├── Dockerfile                  # Container build instructions for the RAG application
