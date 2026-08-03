@@ -11,8 +11,10 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize RAG backend in session state
+# Initialize RAG backend and database in session state
 if "copilot" not in st.session_state:
+    from src.db import init_db
+    init_db()  # Automatically initialize Postgres / SQLite tables on app boot
     st.session_state.copilot = FinDocsCopilotRAG()
 if "last_conv_id" not in st.session_state:
     st.session_state.last_conv_id = None
