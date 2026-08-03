@@ -433,7 +433,7 @@ When reviewing this project for **DataTalks.Club LLM Zoomcamp Capstone 1**, plea
 
 ## 📸 End-to-End Local Implementation, Verification & Kubernetes Deployment Guide (Step-by-Step with Screenshots)
 
-This section provides a comprehensive, step-by-step visual record documenting how **FinDocs Copilot** was implemented, tested, containerized with Docker Compose, deployed to Kubernetes (**Kind** and **Minikube**), and prepared for GitHub peer review submission on Ubuntu Linux.
+This section provides a comprehensive, step-by-step visual record documenting how **FinDocs Copilot** was implemented, tested, containerized with Docker Compose, deployed to Kubernetes (**Kind**), and prepared for GitHub peer review submission on Ubuntu Linux.
 
 ---
 
