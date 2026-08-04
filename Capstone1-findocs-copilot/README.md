@@ -28,10 +28,11 @@
     - [Option B: Kubernetes Deployment (Bonus)](#option-b-kubernetes-deployment-bonus)
     - [Option C: Cloud Deployment via Terraform / Fly.io / Render (Bonus)](#option-c-cloud-deployment-via-terraform--flyio--render-bonus)
     - [Option D: Local Standalone Python Mode (Zero Docker)](#option-d-local-standalone-python-mode-zero-docker)
-11. [Example Inputs & Outputs](#-example-inputs--outputs)
-12. [Repository Structure](#-repository-structure)
-13. [Makefile & Automated Commands](#-makefile--automated-commands)
-14. [Peer Review Guide](#-peer-review-guide)
+11. [Dependency Management & Reproducibility](#-dependency-management--reproducibility)
+12. [Example Inputs & Outputs](#-example-inputs--outputs)
+13. [Repository Structure](#-repository-structure)
+14. [Makefile & Automated Commands](#-makefile--automated-commands)
+15. [Peer Review Guide](#-peer-review-guide)
 
 ---
 
@@ -321,6 +322,46 @@ We built an **offline resilience layer**: if Docker or Elasticsearch is unavaila
 
 ---
 
+## 📦 Dependency Management & Reproducibility
+
+### 📦 Dependency Management
+This project uses **uv**, a fast and modern Python package manager, for dependency resolution and locking.
+
+Dependencies are declared in `pyproject.toml` and compiled into a reproducible `requirements.txt` file for compatibility with Docker, CI/CD, and standard Python environments.
+
+### ➕ Adding Dependencies
+To add a new dependency or install the core packages for this project:
+```bash
+uv add streamlit scikit-learn numpy pandas requests psycopg2-binary sentence-transformers openai pytest
+```
+
+⚠️ We explicitly pin NumPy to <2 for compatibility with scientific and embedding libraries (`scikit-learn` & `sentence-transformers`):
+```bash
+uv add "numpy<2"
+```
+
+### 📌 Generating requirements.txt
+A fully pinned requirements.txt is generated using:
+```bash
+uv pip compile pyproject.toml -o requirements.txt
+```
+This file must be committed to the repository.
+
+### 🐳 Why requirements.txt is still used
+Although uv is used for development, `requirements.txt` ensures:
+- Docker compatibility
+- Faster CI builds
+- Deterministic deployments
+- Kubernetes & air-gapped support
+
+### 🔁 Reproducibility
+- All dependencies are listed in `requirements.txt`
+- Training, inference, and deployment are script-based
+- The project can be fully reproduced using the instructions in this `README.md`
+- Preprocessing logic is unit-tested to ensure correct dataset structure and reproducible behavior.
+
+---
+
 ## 💡 Example Inputs & Outputs
 
 ### Example 1: NVIDIA U.S. Export Control Regulations
@@ -345,6 +386,7 @@ We built an **offline resilience layer**: if Docker or Elasticsearch is unavaila
 
 ```text
 findocs-copilot/
+├── pyproject.toml
 ├── pytest.ini
 ├── .gitignore
 ├── app.py                      # Streamlit interactive web interface & analytics UI
