@@ -1,7 +1,7 @@
 # 📊 FinDocs Copilot — Public Company SEC 10-K & Earnings AI Analyst
 **An End-to-End Financial RAG Application with Hybrid Search, Document Re-Ranking, Multimodal Audio Briefings, and Real-Time Grafana Telemetry**
 
-[![LLM Zoomcamp](https://img.shields.io/badge/DataTalks.Club-LLM%20Zoomcamp%202025-blue)](https://github.com/DataTalksClub/llm-zoomcamp)
+[![LLM Zoomcamp](https://img.shields.io/badge/DataTalks.Club-LLM%20Zoomcamp%202026-blue)](https://github.com/DataTalksClub/llm-zoomcamp)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Ready-0db7ed.svg)](docker-compose.yml)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Ready-326ce5.svg)](k8s/)
