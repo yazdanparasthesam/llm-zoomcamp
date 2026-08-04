@@ -335,10 +335,6 @@ To add a new dependency or install the core packages for this project:
 uv add streamlit scikit-learn numpy pandas requests psycopg2-binary sentence-transformers openai pytest
 ```
 
-⚠️ We explicitly pin NumPy to <2 for compatibility with scientific and embedding libraries (`scikit-learn` & `sentence-transformers`):
-```bash
-uv add "numpy<2"
-```
 
 ### 📌 Generating requirements.txt
 A fully pinned requirements.txt is generated using:
@@ -359,6 +355,11 @@ Although uv is used for development, `requirements.txt` ensures:
 - Training, inference, and deployment are script-based
 - The project can be fully reproduced using the instructions in this `README.md`
 - Preprocessing logic is unit-tested to ensure correct dataset structure and reproducible behavior.
+
+  * **Screenshot Reference**:
+  ![Step 0 - uv init](docs/images/Screenshot%20from%202026-08-04%2014-57-38.png)  
+  ![Step 0 - uv add](docs/images/Screenshot%20from%202026-08-04%2014-57-50.png)  
+  ![Step 0 - generate requirements.txt](docs/images/Screenshot%20from%202026-08-04%2014-57-59.png)
 
 ---
 
