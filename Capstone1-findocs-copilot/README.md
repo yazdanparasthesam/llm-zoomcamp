@@ -557,6 +557,6 @@ We deployed FinDocs Copilot to Kubernetes using **Kind (Kubernetes in Docker)** 
 ---
 
 ### Step 10: Git Repository Initialization, Commit & GitHub Peer Review Submission
-We initialized the repository (`git init`), added `.gitignore` to exclude temporary environments and databases, committed all files (`git commit -m "feat: complete FinDocs Copilot RAG capstone project (25/20 score)"`), pushed to the public GitHub repository (`git push -u origin main`), and generated the 40-character `commit-hash` (`git rev-parse HEAD`) for course peer review evaluation.
+We initialized the repository (`git init`), added `.gitignore` to exclude temporary environments and databases, committed all files (`git commit -m "feat: complete FinDocs Copilot RAG capstone project "`), pushed to the public GitHub repository (`git push -u origin main`), and generated the 40-character `commit-hash` (`git rev-parse HEAD`) for course peer review evaluation.
 
 
