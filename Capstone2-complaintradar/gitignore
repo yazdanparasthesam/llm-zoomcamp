@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+
+# Databases & local cache
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+*.duckdb.wal
+
+# dlt / pipeline local state
+.dlt/secrets.toml
+pipeline_data/
+ingestion/.dlt/
+
+# Terraform local state / secrets (never commit tokens)
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfvars
+*.auto.tfvars
+
+# Test caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
