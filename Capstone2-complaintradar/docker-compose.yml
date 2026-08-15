@@ -1,0 +1,75 @@
+services:
+  app:
+    build: .
+    container_name: complaintradar_app
+    ports:
+      - "8501:8501"
+    environment:
+      - USE_DOCKER=true
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=complaintradar_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+    depends_on:
+      elasticsearch:
+        condition: service_started
+      postgres:
+        condition: service_started
+    volumes:
+      - .:/app
+    restart: always
+
+  elasticsearch:
+    image: elasticsearch:8.11.4
+    container_name: complaintradar_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200 >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:16
+    container_name: complaintradar_postgres
+    environment:
+      - POSTGRES_DB=complaintradar_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d complaintradar_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: complaintradar_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    depends_on:
+      - postgres
+    restart: always
+
+volumes:
+  pgdata:

@@ -1,0 +1,6 @@
+{
+  "selected_mode": "text",
+  "selected_label": "Text Search (BM25)",
+  "chunk_mrr@5": 0.6228,
+  "doc_mrr@5": 0.6703
+}

@@ -1,0 +1,44 @@
+{
+  "selected_mode": "text",
+  "selected_label": "Text Search (BM25)",
+  "reason": "Highest chunk MRR@5, then doc MRR@5, then chunk Hit@5 on the 100-question ground-truth set.",
+  "metrics": {
+    "text": {
+      "label": "Text Search (BM25)",
+      "doc_hit@5": 0.71,
+      "doc_mrr@5": 0.6703,
+      "chunk_hit@5": 0.67,
+      "chunk_mrr@5": 0.6228
+    },
+    "vector": {
+      "label": "Vector Search (Cosine)",
+      "doc_hit@5": 0.21,
+      "doc_mrr@5": 0.1087,
+      "chunk_hit@5": 0.16,
+      "chunk_mrr@5": 0.0778
+    },
+    "hybrid": {
+      "label": "Hybrid Search (RRF)",
+      "doc_hit@5": 0.66,
+      "doc_mrr@5": 0.4272,
+      "chunk_hit@5": 0.6,
+      "chunk_mrr@5": 0.3852
+    },
+    "hybrid_rerank": {
+      "label": "Hybrid + Re-ranking",
+      "doc_hit@5": 0.74,
+      "doc_mrr@5": 0.6458,
+      "chunk_hit@5": 0.69,
+      "chunk_mrr@5": 0.5783
+    },
+    "hybrid_rerank_no_rewrite": {
+      "label": "Hybrid + Re-ranking (no rewrite)",
+      "doc_hit@5": 0.74,
+      "doc_mrr@5": 0.6508,
+      "chunk_hit@5": 0.69,
+      "chunk_mrr@5": 0.5833
+    }
+  },
+  "rerank_delta_doc_mrr@5": 0.2186,
+  "rerank_delta_chunk_mrr@5": 0.1931
+}

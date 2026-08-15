@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complaintradar-grafana
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: complaintradar-grafana
+  template:
+    metadata:
+      labels:
+        app: complaintradar-grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:10.2.0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: admin
+            - name: GF_USERS_ALLOW_SIGN_UP
+              value: "false"
+          volumeMounts:
+            - name: datasources
+              mountPath: /etc/grafana/provisioning/datasources
+            - name: dashboards-provider
+              mountPath: /etc/grafana/provisioning/dashboards
+            - name: dashboard-json
+              mountPath: /var/lib/grafana/dashboards
+      volumes:
+        - name: datasources
+          configMap:
+            name: complaintradar-grafana-datasources
+        - name: dashboards-provider
+          configMap:
+            name: complaintradar-grafana-dashboards-provider
+        - name: dashboard-json
+          configMap:
+            name: complaintradar-grafana-dashboard-json
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: complaintradar-grafana
+  namespace: default
+spec:
+  selector:
+    app: complaintradar-grafana
+  ports:
+    - port: 3000
+      targetPort: 3000

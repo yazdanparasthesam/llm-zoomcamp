@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complaintradar-elasticsearch
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: complaintradar-elasticsearch
+  template:
+    metadata:
+      labels:
+        app: complaintradar-elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: elasticsearch:8.11.4
+          ports:
+            - containerPort: 9200
+          env:
+            - name: discovery.type
+              value: single-node
+            - name: xpack.security.enabled
+              value: "false"
+            - name: ES_JAVA_OPTS
+              value: "-Xms512m -Xmx512m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: complaintradar-elasticsearch
+  namespace: default
+spec:
+  selector:
+    app: complaintradar-elasticsearch
+  ports:
+    - port: 9200
+      targetPort: 9200

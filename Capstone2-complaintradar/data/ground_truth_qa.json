@@ -1,0 +1,1002 @@
+[
+  {
+    "question_id": "GT-001",
+    "question": "What happened in the Experian CFPB complaint that mentions \"account was opened without my knowledge and\"?",
+    "ground_truth_doc_id": "CFPB-10689058",
+    "ground_truth_chunk_id": "CFPB-10689058_1",
+    "ground_truth_company": "EXPERIAN",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "On [REDACTED] [REDACTED] a [REDACTED] account was opened without my knowledge and is fraudulent ON [REDACTED] [REDACTED] a [REDACTED] [REDACTED] [REDACTED][REDACTED] hard inquiry was made in my name fraudulently and I did not consent this inquiry. On [REDACTED] [REDACTED] a [REDACTED] [REDACTED] [REDACTED][REDACTED] ha",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-002",
+    "question": "A Experian customer filed a credit reporting complaint about improper use of your report. What specifically did they say regarding \"got my credit report and noticed some\"?",
+    "ground_truth_doc_id": "CFPB-10691904",
+    "ground_truth_chunk_id": "CFPB-10691904_1",
+    "ground_truth_company": "EXPERIAN",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "I just got my credit report and noticed some hard inquiries don't have permissible purpose according to 15 USC 168.1b. I also attach a copy of credit report, can you please investigate these hard inquiries below. Hard inquiries : [REDACTED] ) [REDACTED] [REDACTED] [DATE]/[REDACTED]. Delete this hard inquiry because of ",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-003",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 11000647 against Experian?",
+    "ground_truth_doc_id": "CFPB-11000647",
+    "ground_truth_chunk_id": "CFPB-11000647_1",
+    "ground_truth_company": "EXPERIAN",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Upon checking my credit profile, I noticed several fraudulent accounts and inquiries reporting on my file that I did not open. EXPERIAN============ [REDACTED] Account info Account number [REDACTED] Open/closed Closed Date opened [DATE]/[REDACTED] [REDACTED] [REDACTED] Account info Account number [REDACTED] Open/closed ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-004",
+    "question": "What happened in the Experian CFPB complaint that mentions \"usage 100 % Balance $750.00 Balance updated\"?",
+    "ground_truth_doc_id": "CFPB-12056277",
+    "ground_truth_chunk_id": "CFPB-12056277_1",
+    "ground_truth_company": "EXPERIAN",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "[REDACTED] Credit usage 100 % Balance {$750.00} Balance updated [DATE]/[REDACTED] Credit limit {$500.00} Account info Account number [REDACTED] Open/closed Closed [REDACTED] Credit usage 26 % Balance {$140.00} Balance updated [DATE]/[REDACTED] Credit limit {$550.00} Account info Account number [REDACTED] Open/closed Cl",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-005",
+    "question": "A Experian customer filed a credit reporting complaint about incorrect information on your report. What specifically did they say regarding \"on my credit report and found several\"?",
+    "ground_truth_doc_id": "CFPB-12738848",
+    "ground_truth_chunk_id": "CFPB-12738848_1",
+    "ground_truth_company": "EXPERIAN",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Recently I did an investigation on my credit report and found several items on there to be inaccurate. Under 15 U.S. Code 1681e ( b ) Accuracy of report Whenever a consumer reporting agency prepares a consumer report, it shall follow reasonable procedures to assure the maximum possible accuracy of the information conce",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-006",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 12839488 against Experian?",
+    "ground_truth_doc_id": "CFPB-12839488",
+    "ground_truth_chunk_id": "CFPB-12839488_1",
+    "ground_truth_company": "EXPERIAN",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Recently I did an investigation on my credit report and found several items on there to be inaccurate. Under 15 U.S. Code 1681e ( b ) Accuracy of report Whenever a consumer reporting agency prepares a consumer report, it shall follow reasonable procedures to assure the maximum possible accuracy of the information conce",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-007",
+    "question": "What happened in the Equifax CFPB complaint that mentions \"account was opened without my knowledge and\"?",
+    "ground_truth_doc_id": "CFPB-10688743",
+    "ground_truth_chunk_id": "CFPB-10688743_1",
+    "ground_truth_company": "EQUIFAX",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "On [REDACTED] [REDACTED] a [REDACTED] account was opened without my knowledge and is fraudulent [REDACTED] [REDACTED][REDACTED] [REDACTED] a [REDACTED] [REDACTED] [REDACTED][REDACTED] hard inquiry was made in my name fraudulently and I did not consent this inquiry. On [REDACTED] [REDACTED] a [REDACTED] [REDACTED] [REDA",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-008",
+    "question": "A Equifax customer filed a credit reporting complaint about improper use of your report. What specifically did they say regarding \"got my credit report and noticed some\"?",
+    "ground_truth_doc_id": "CFPB-10691906",
+    "ground_truth_chunk_id": "CFPB-10691906_1",
+    "ground_truth_company": "EQUIFAX",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "I just got my credit report and noticed some hard inquiries don't have permissible purpose according to 15 USC 168.1b. I also attach a copy of credit report, can you please investigate these hard inquiries below. Hard inquiries : [REDACTED] ) [REDACTED] [REDACTED] [DATE]/[REDACTED]. Delete this hard inquiry because of ",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-009",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 10998817 against Equifax?",
+    "ground_truth_doc_id": "CFPB-10998817",
+    "ground_truth_chunk_id": "CFPB-10998817_1",
+    "ground_truth_company": "EQUIFAX",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Upon checking my credit profile, I noticed several fraudulent accounts and inquiries reporting on my file that I did not open. [REDACTED] [REDACTED] Account info Account number [REDACTED] Open/closed Closed Date opened [DATE]/[REDACTED] [REDACTED] [REDACTED] Account info Account number [REDACTED] Open/closed Closed Dat",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-010",
+    "question": "What happened in the Equifax CFPB complaint that mentions \"writing to formally notify Equifax that I\"?",
+    "ground_truth_doc_id": "CFPB-11932638",
+    "ground_truth_chunk_id": "CFPB-11932638_1",
+    "ground_truth_company": "EQUIFAX",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "I am writing to formally notify Equifax that I am a victim of the data breach that occurred in 2017. As a result, my personal information was compromised and may be linked to fraudulent accounts or activities. Under the provisions of 15 USC 1681c-2 ( a ), I am requesting that all accounts mentioned in connection with t",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-011",
+    "question": "A Equifax customer filed a credit reporting complaint about incorrect information on your report. What specifically did they say regarding \"on my credit report and found several\"?",
+    "ground_truth_doc_id": "CFPB-12739979",
+    "ground_truth_chunk_id": "CFPB-12739979_1",
+    "ground_truth_company": "EQUIFAX",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Recently I did an investigation on my credit report and found several items on there to be inaccurate. Under 15 U.S. Code 1681e ( b ) Accuracy of report Whenever a consumer reporting agency prepares a consumer report, it shall follow reasonable procedures to assure the maximum possible accuracy of the information conce",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-012",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 12839392 against Equifax?",
+    "ground_truth_doc_id": "CFPB-12839392",
+    "ground_truth_chunk_id": "CFPB-12839392_1",
+    "ground_truth_company": "EQUIFAX",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Recently I did an investigation on my credit report and found several items on there to be inaccurate. Under 15 U.S. Code 1681e ( b ) Accuracy of report Whenever a consumer reporting agency prepares a consumer report, it shall follow reasonable procedures to assure the maximum possible accuracy of the information conce",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-013",
+    "question": "What happened in the TransUnion CFPB complaint that mentions \"account was opened without my knowledge and\"?",
+    "ground_truth_doc_id": "CFPB-10699040",
+    "ground_truth_chunk_id": "CFPB-10699040_1",
+    "ground_truth_company": "TRANSUNION",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "On [REDACTED] [REDACTED] a [REDACTED] account was opened without my knowledge and is fraudulent [REDACTED] [REDACTED] [REDACTED] a [REDACTED] [REDACTED] [REDACTED][REDACTED] hard inquiry was made in my name fraudulently and I did not consent this inquiry. On [REDACTED] [REDACTED] a [REDACTED] [REDACTED] [REDACTED][REDA",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-014",
+    "question": "A TransUnion customer filed a credit reporting complaint about incorrect information on your report. What specifically did they say regarding \"my credit profile I noticed several fraudulent\"?",
+    "ground_truth_doc_id": "CFPB-10999959",
+    "ground_truth_chunk_id": "CFPB-10999959_1",
+    "ground_truth_company": "TRANSUNION",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Upon checking my credit profile, I noticed several fraudulent accounts and inquiries reporting on my file that I did not open. [REDACTED] [REDACTED] Account info Account number [REDACTED] Open/closed Closed Date opened [DATE]/[REDACTED] [REDACTED] [REDACTED][REDACTED] Account info Account number [REDACTED] Open/closed ",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-015",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 12033254 against TransUnion?",
+    "ground_truth_doc_id": "CFPB-12033254",
+    "ground_truth_chunk_id": "CFPB-12033254_1",
+    "ground_truth_company": "TRANSUNION",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "[REDACTED] Credit usage 100 % Balance {$750.00} Balance updated [DATE]/[REDACTED] Credit limit {$500.00} Account info Account number [REDACTED] Open/closed Closed [REDACTED] Credit usage 26 % Balance {$140.00} Balance updated [DATE]/[REDACTED] Credit limit {$550.00} Account info Account number [REDACTED] Open/closed Cl",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-016",
+    "question": "What happened in the TransUnion CFPB complaint that mentions \"on my credit report and found several\"?",
+    "ground_truth_doc_id": "CFPB-12752817",
+    "ground_truth_chunk_id": "CFPB-12752817_1",
+    "ground_truth_company": "TRANSUNION",
+    "ground_truth_product": "Credit reporting",
+    "reference_answer": "Recently I did an investigation on my credit report and found several items on there to be inaccurate. Under 15 U.S. Code 1681e ( b ) Accuracy of report Whenever a consumer reporting agency prepares a consumer report, it shall follow reasonable procedures to assure the maximum possible accuracy of the information conce",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-017",
+    "question": "A Synchrony customer filed a credit card complaint about problem with a purchase shown on your statement. What specifically did they say regarding \"purchased a double recliner sofa from the\"?",
+    "ground_truth_doc_id": "CFPB-10281356",
+    "ground_truth_chunk_id": "CFPB-10281356_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "I initially purchased a double recliner sofa from the merchant [REDACTED] [REDACTED] located at [REDACTED] [REDACTED] [REDACTED], [REDACTED][REDACTED] [REDACTED] [REDACTED] for {$4000.00}. I was offered by the merchant [REDACTED] [REDACTED] to finance this purchase by applying for a Synchrony credit card, which I opted",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-018",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 10304088 against Synchrony?",
+    "ground_truth_doc_id": "CFPB-10304088",
+    "ground_truth_chunk_id": "CFPB-10304088_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "Starting [DATE]/year> ; I charged a line of credit to my Synchrony Bank Care Credit Account. As Synchrony Bank was experiencing difficulties accepting payments using a [REDACTED] directly to my Synchrony account ; I was making payments using my bank to Synchrony Bank via bank checks with my account number listed on the",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-019",
+    "question": "What happened in the Synchrony CFPB complaint that mentions \"Bank Product Credit card Venmo Visa Issue\"?",
+    "ground_truth_doc_id": "CFPB-18375984",
+    "ground_truth_chunk_id": "CFPB-18375984_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "Company : Synchrony Bank Product : Credit card ( Venmo Visa ) Issue Type : Credit limit reduced/ over-limit status Desired Resolution : Correct reporting, explanation, and remediation Complaint Description I am submitting this complaint regarding my Venmo Visa credit card issued by Synchrony Bank. Synchrony reduced my ",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-020",
+    "question": "A Synchrony customer filed a credit card complaint about problem with a purchase shown on your statement. What specifically did they say regarding \"/ REDACTED a charge was made on\"?",
+    "ground_truth_doc_id": "CFPB-3460405",
+    "ground_truth_chunk_id": "CFPB-3460405_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "On [DATE]/[REDACTED], a charge was made on Synchrony Bank account in the amount of {$6500.00} which was not authorized and for which no work was done and no contractor 's contract exists. Complainant filed a fraud complaint with Synchrony Bank at their direction in [DATE]/[REDACTED]. Synchrony responded on [DATE]/[REDA",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-021",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 8821889 against Synchrony?",
+    "ground_truth_doc_id": "CFPB-8821889",
+    "ground_truth_chunk_id": "CFPB-8821889_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "I would like to highlight a pattern I've become privy to with SYNCHRONY. As you can see, the first complaint response from them, through the CFPB, I was DENIED my right to revoke POA and my payment instrument ( MY DIVIDEND COUPON ) which I endorsed to SYNCHRONY, was denied ; however, SYNCHRONY failed to return my coupo",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-022",
+    "question": "What happened in the Synchrony CFPB complaint that mentions \"on the phone getting passed back and\"?",
+    "ground_truth_doc_id": "CFPB-15744132",
+    "ground_truth_chunk_id": "CFPB-15744132_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "I've been on the phone getting passed back and forth from Venmo to Synchrony Bank for hours this morning ( [DATE]/year>[REDACTED] ). I went to close my Venmo account and received a pop up saying \" You have a Venmo Credit Card application in progress. Before closing your account, you need to contact Synchrony Bank and c",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-023",
+    "question": "A Synchrony customer filed a credit card complaint about fees or interest. What specifically did they say regarding \"No response from company. In reviewing activity\"?",
+    "ground_truth_doc_id": "CFPB-8152425",
+    "ground_truth_chunk_id": "CFPB-8152425_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "LETTER to Care Credit [REDACTED] [REDACTED], [REDACTED]. No response from company. In reviewing activity on my account, I see that every payment due date ( [REDACTED] ) a late fee is assessed on my account. The late fee increased from {$30.00} in [REDACTED] to {$41.00}. Rather than my balance decreasing as expected sin",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-024",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 8942359 against Synchrony?",
+    "ground_truth_doc_id": "CFPB-8942359",
+    "ground_truth_chunk_id": "CFPB-8942359_1",
+    "ground_truth_company": "SYNCHRONY",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "Co. reported [DATE]/[REDACTED] payment as late and charged late fee ( later refunded on [DATE]/[REDACTED] ) after my bank and I disputed ) ; for the [DATE]/[REDACTED] payment, co. charged late fee on [REDACTED] ( refunded on [DATE]/[REDACTED] after my bank and I disputed ) and interest on [DATE]/[REDACTED] ( co. never ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-025",
+    "question": "What happened in the Capital One CFPB complaint that mentions \"Computational Billing Error Resolution Affidavit I REDACTED\"?",
+    "ground_truth_doc_id": "CFPB-10139196",
+    "ground_truth_chunk_id": "CFPB-10139196_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "[ capital one & [REDACTED] [REDACTED] [REDACTED] ] [ [REDACTED] day of [DATE]/year>2024 ] [ [REDACTED] [REDACTED] ] [ [REDACTED] [REDACTED] [REDACTED] [REDACTED] [REDACTED] [REDACTED] ] [ [REDACTED] [REDACTED], NY [REDACTED] ] Dear [ Capital one & or [REDACTED] [REDACTED] [REDACTED] ], RE : Computational Billing Error ",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-026",
+    "question": "A Capital One customer filed a credit card complaint about other features, terms, or problems. What specifically did they say regarding \"discriminated against me. Unfairly cut my Kohl\"?",
+    "ground_truth_doc_id": "CFPB-14570964",
+    "ground_truth_chunk_id": "CFPB-14570964_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "Capital One discriminated against me. Unfairly cut my Kohl 's capital one credit card off due to a [REDACTED][REDACTED][REDACTED] [REDACTED] [REDACTED] Capital one sent the letter out on [DATE]/year>. The particular credit Bureau capital refused to list the direct of the credit bureau. I know the direct name of the cre",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-027",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 16261457 against Capital One?",
+    "ground_truth_doc_id": "CFPB-16261457",
+    "ground_truth_chunk_id": "CFPB-16261457_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "I have two Capital One credit card accounts that have been repeatedly assessed late fees based on the amount of my missed payment, up to a maximum of {$40.00}. These fees violate the Consumer Financial Protection Bureaus [DATE]/[REDACTED] rule, which caps late fees at {$8.00} unless the issuer can demonstrate higher co",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-028",
+    "question": "What happened in the Capital One CFPB complaint that mentions \"to make a bank transfer or pay\"?",
+    "ground_truth_doc_id": "CFPB-17883881",
+    "ground_truth_chunk_id": "CFPB-17883881_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "On [DATE]/2025, [REDACTED] [REDACTED] attempted to make a bank transfer or pay my bill for {$800.00} from the [REDACTED][REDACTED] [REDACTED] [REDACTED] [REDACTED][REDACTED]. I have the Routing Number and Account Number for this transaction to my Capital One Credit Card. I received a letter from Capital One to call the",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-029",
+    "question": "A Capital One customer filed a credit card complaint about getting a credit card. What specifically did they say regarding \"recent response to my CFPB complaint about\"?",
+    "ground_truth_doc_id": "CFPB-3524910",
+    "ground_truth_chunk_id": "CFPB-3524910_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "In most recent response to my CFPB complaint about the fact that Capital One misrepresents the federal laws to the customers by making statements that there exist federal regulations that require Capital One to collect citizenship status of consumers applying for a Capital One credit card Capital One claimed the follow",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-030",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 3771738 against Capital One?",
+    "ground_truth_doc_id": "CFPB-3771738",
+    "ground_truth_chunk_id": "CFPB-3771738_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "1. On [DATE]/[REDACTED], I called CapitalOne and requested to make a transfer of funds from CapitalOne to [REDACTED] [REDACTED] [REDACTED]. The representative from CapitalOne instructed me to initiate the transfer through my CapitalOne banking app. I put my [REDACTED] credit card information in correctly on the app and",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-031",
+    "question": "What happened in the Capital One CFPB complaint that mentions \"CRIMINALS FORCE YOU TO PAY FOR THINGS\"?",
+    "ground_truth_doc_id": "CFPB-4067374",
+    "ground_truth_chunk_id": "CFPB-4067374_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "CAPITAL ONE CRIMINALS FORCE YOU TO PAY FOR THINGS YOU DO NOT PURCHASE FOR THEIR OWN PROFIT and GAIN Their hatred to the limited customers left is CRIMINAL. FAILURE TO DO JOB IN PROFESSIONAL ( LEGAL ) MANNER IS CRIMINAL. Extortion is what they like to do because the hate YOU. Racketeering against people is their trade m",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-032",
+    "question": "A Capital One customer filed a credit card complaint about problem with a purchase shown on your statement. What specifically did they say regarding \"of Capital one for numerous of years.\"?",
+    "ground_truth_doc_id": "CFPB-4495826",
+    "ground_truth_chunk_id": "CFPB-4495826_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Credit card",
+    "reference_answer": "I have been a customer of Capital one for numerous of years. Capital One mailed out credit cards to my old address. I never received the cards that Capital One mailed. I reported to Capital one that I had moved and requested for them to change my address to my new current address. I contacted Capital One to dispute the",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-033",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 16188256 against Early Warning / Zelle?",
+    "ground_truth_doc_id": "CFPB-16188256",
+    "ground_truth_chunk_id": "CFPB-16188256_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "On [DATE]/year>. I was contacted by a chase number. Which I verified on [REDACTED] as a chase number that my Zelle account was hacked I had hung up on the phone a couple of times and they called me back with the [REDACTED] number. They also sent me a Zelle fraud alert to my phone. The person on the phone instructed me ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-034",
+    "question": "What happened in the Early Warning / Zelle CFPB complaint that mentions \"never get this money REDACTED deducted $5000.00\"?",
+    "ground_truth_doc_id": "CFPB-17032036",
+    "ground_truth_chunk_id": "CFPB-17032036_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "Family Member used Zelle send money from [REDACTED] [REDACTED] account : [REDACTED] [REDACTED] [REDACTED], to Zelle [REDACTED] [REDACTED] [REDACTED][REDACTED] [REDACTED] times : see below [REDACTED] from [REDACTED] [REDACTED] account send {$3500.00} to BOA [REDACTED] [REDACTED] [REDACTED] [REDACTED] send an email to [R",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-035",
+    "question": "A Early Warning / Zelle customer filed a money transfer complaint about fraud or scam. What specifically did they say regarding \". i went and closed bank account\"?",
+    "ground_truth_doc_id": "CFPB-12059782",
+    "ground_truth_chunk_id": "CFPB-12059782_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "[REDACTED] [REDACTED] {$3100.00}. i went and closed bank account at [REDACTED][REDACTED] [REDACTED] [REDACTED] [REDACTED][REDACTED], Ohio when i found out about. me and one of chase workers went to the office to get things taken care of. the guy at chase told me he had token care of everything that was fraud. he even l",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-036",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 4520622 against Early Warning / Zelle?",
+    "ground_truth_doc_id": "CFPB-4520622",
+    "ground_truth_chunk_id": "CFPB-4520622_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "Late in the day on [REDACTED], I transferred money to a person via Zelle in my [REDACTED] app for tickets to an event in the amount of {$450.00}. On the morning of [REDACTED], the tickets had not arrived. I contacted the person via text who never responded. I then called them, they immediately hung up and blocked me. I",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-037",
+    "question": "What happened in the Early Warning / Zelle CFPB complaint that mentions \"told me I could make my payment\"?",
+    "ground_truth_doc_id": "CFPB-7875671",
+    "ground_truth_chunk_id": "CFPB-7875671_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "A vendor told me I could make my payment using Zelle. I assumed the vendor 's email address was their Zelle address, so set that up on Zelle and made the payment. I thought. It turned out that the vendor 's Zelle address was a different email address. But Zelle accepted my payment anyway! Zelle will accept a payment to",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-038",
+    "question": "A Early Warning / Zelle customer filed a money transfer complaint about fraud or scam. What specifically did they say regarding \"claimed to a puppy breeder charged and\"?",
+    "ground_truth_doc_id": "CFPB-3333581",
+    "ground_truth_chunk_id": "CFPB-3333581_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "A fraudster claimed to a puppy breeder charged and asked me to transfer [REDACTED] $ for the puppy fee including the shipping. Transfer this amount of [DATE]/[REDACTED] on [REDACTED] the breeder confirms that they have registered the puppy at a shipping agency and they would ship the puppy soon. However, the shipping a",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-039",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 11581272 against Early Warning / Zelle?",
+    "ground_truth_doc_id": "CFPB-11581272",
+    "ground_truth_chunk_id": "CFPB-11581272_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "In [REDACTED] I bought concert tickets from a person and they scammed me on Zelle. They had made multiple fake accounts on Zelle and I did not know this until I had a friend try to talk to the scammer and see what other information they were going to give them. I lost out on [REDACTED] dollars because chase did nothing",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-040",
+    "question": "What happened in the Early Warning / Zelle CFPB complaint that mentions \"REDACTED on DATE /year i wasn t\"?",
+    "ground_truth_doc_id": "CFPB-16926297",
+    "ground_truth_chunk_id": "CFPB-16926297_1",
+    "ground_truth_company": "EARLY_WARNING",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "i received a call from the fraud department [REDACTED] [REDACTED] [REDACTED], on [DATE]/year>, i wasn't able to take it because i was in the middle of work. the message stated that it was \" in regards to an inquiry we received and to call back on [REDACTED]. '' i gave a call to the number for fraud, and they stated the",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-041",
+    "question": "A Wells Fargo customer filed a money transfer complaint about other transaction problem. What specifically did they say regarding \"Wells Fargo. I had to add REDACTED\"?",
+    "ground_truth_doc_id": "CFPB-3320160",
+    "ground_truth_chunk_id": "CFPB-3320160_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "I needed to transfer money from [REDACTED] [REDACTED], [REDACTED] MS to Wells Fargo. I had to add [REDACTED] [REDACTED] to my Wells Fargo account as an authorized bank. I followed all of Wells Fargo bank-to-bank transfer validation procedures to add [REDACTED] [REDACTED]. I received notification that [REDACTED] [REDACT",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-042",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 6455672 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-6455672",
+    "ground_truth_chunk_id": "CFPB-6455672_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "On [DATE]/23, a scammer called my wife and pretended to be a representative from Wells Fargo. The scammer also called Wells Fargo and pretended to be my wife. The scammer provided my wife 's information to Wells Fargo and Wells Fargo sent an authentication code to my wife 's real phone number on file. The scammer, who ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-043",
+    "question": "What happened in the Wells Fargo CFPB complaint that mentions \"for $10000.00 by a Wells Fargo impersonator\"?",
+    "ground_truth_doc_id": "CFPB-18379907",
+    "ground_truth_chunk_id": "CFPB-18379907_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "On [DATE]/year> I was scammed for {$10000.00} by a Wells Fargo impersonator using a Wells Fargo phone number to [REDACTED] and call me on and they also have or had a Wells Fargo fraudulent account where I deposited my money through a Wells Fargo atm thinking it was going into my Wells Fargo account but it went into thi",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-044",
+    "question": "A Wells Fargo customer filed a money transfer complaint about other transaction problem. What specifically did they say regarding \"/ REDACTED a transaction of $1000.00 was\"?",
+    "ground_truth_doc_id": "CFPB-9816706",
+    "ground_truth_chunk_id": "CFPB-9816706_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "On [DATE]/[REDACTED] a transaction of {$1000.00} was made on Wells Fargo [REDACTED] app, my money was sent to Wells Fargo and was stated to be returned by Wells Fargo via the recipient. Wells Fargo has failed to return my funds as promised and has lost where my funds are currently being held. Wells Fargo has done nothi",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-045",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 3198090 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-3198090",
+    "ground_truth_chunk_id": "CFPB-3198090_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "Money was transferred through Wells Fargo on a [REDACTED] account. A complaint was filed with Wells Fargo informing the person never sent the purse. A request was made to Wells Fargo to return the money and Wells Fargo said no. Wells Fargo should not be doing business with [REDACTED]. Wells Fargo needs to note this on ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-046",
+    "question": "What happened in the Bank of America CFPB complaint that mentions \"defrauded of REDACTED dollars from an individual\"?",
+    "ground_truth_doc_id": "CFPB-11391294",
+    "ground_truth_chunk_id": "CFPB-11391294_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "On [DATE]/year>, I was defrauded of [REDACTED] dollars from an individual who impersonated themselves as a member of the Bank of America [REDACTED] Department. They sent me security codes with Bank of America [REDACTED] on them and then contacted Bank of America and denied me to speak for myself on the telephone contac",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-047",
+    "question": "A Bank of America customer filed a money transfer complaint about fraud or scam. What specifically did they say regarding \"PROTECTION BUREAU SO IM SUBMITTED WRITTEN ONLINE\"?",
+    "ground_truth_doc_id": "CFPB-5438643",
+    "ground_truth_chunk_id": "CFPB-5438643_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "DEAR CONSUMER PROTECTION BUREAU SO IM SUBMITTED WRITTEN ONLINE EMAIL REQUEST ABOUT [REDACTED] HAVING DELAY PROBLEM ISSUES WITH BANK OF AMERICAN NOT DEPOSITED MOBILE CHECK RECENT DEPOSIT IN THE PURCHASE AMOUNT [REDACTED] DOLLARS SO I RECENT DEPOSIT MOBILE CHECK DEPOSIT INTO MY ONLINE BANK OF AMERICAN ACCOUNT THEY RECENT",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-048",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 16568284 against Bank of America?",
+    "ground_truth_doc_id": "CFPB-16568284",
+    "ground_truth_chunk_id": "CFPB-16568284_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Money transfer",
+    "reference_answer": "I initiated a wire transfer from [REDACTED] Bank of America located in [REDACTED] [REDACTED], Florida to a Bank of America account in [REDACTED], Illinois. I learned several weeks later that this was a scam as in catfish, [REDACTED] [REDACTED] [REDACTED] [REDACTED] scheme. I have requested Bank of America to recapture ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-049",
+    "question": "What happened in the Navient CFPB complaint that mentions \"third complaint with the CFPB against Navient\"?",
+    "ground_truth_doc_id": "CFPB-1829640",
+    "ground_truth_chunk_id": "CFPB-1829640_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "I file this third complaint with the CFPB against Navient ( formerly [REDACTED] [REDACTED] [REDACTED] for the following reasons : In Navient 's response to the [REDACTED] prior CFPB complaints I filed last year, Navient indicated they would include a note to credit reporting agencies indicating I was disputing the debt",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-050",
+    "question": "A Navient customer filed a student loan complaint about dealing with your lender or servicer. What specifically did they say regarding \"complaint about both payment allocation and loan\"?",
+    "ground_truth_doc_id": "CFPB-2663920",
+    "ground_truth_chunk_id": "CFPB-2663920_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "This is a complaint about both payment allocation and loan servicing customer service. After absentmindedly missing a payment I paid the full balance the following month, and, on a subsequent login to Navient 's website, the limited information available to me on Navient 's website showed that Navient had allocated the",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-051",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 3117095 against Navient?",
+    "ground_truth_doc_id": "CFPB-3117095",
+    "ground_truth_chunk_id": "CFPB-3117095_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "On [DATE]/[REDACTED], I logged into the Navient site and scheduled a payment of {$300.00} through their make a payment tab. The payment was later marked reversed on my list of transactions on Navient 's site. Today, [DATE]/[REDACTED], I was told by a representative of Navient that the [DATE]/[REDACTED] payment was refu",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-052",
+    "question": "What happened in the Navient CFPB complaint that mentions \"filed a complaint against Navient alleging that\"?",
+    "ground_truth_doc_id": "CFPB-3162818",
+    "ground_truth_chunk_id": "CFPB-3162818_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "I personally filed a complaint against Navient, alleging that Navient promised that my loan was eligible for public service loan forgiveness, only to find out later that my loans did not qualify. Phone recordings from Navient, selectively produced by Navient, seem to indicate that I was told my loans don't qualify. How",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-053",
+    "question": "A Navient customer filed a student loan complaint about dealing with your lender or servicer. What specifically did they say regarding \"a complaint previously submitted to the CFPB.\"?",
+    "ground_truth_doc_id": "CFPB-3211328",
+    "ground_truth_chunk_id": "CFPB-3211328_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "This is a follow-up to a complaint previously submitted to the CFPB. This complaint is being submitted simultaneously to the CFPB and to the [REDACTED] [REDACTED] [REDACTED] via [REDACTED]. Navient 's response to my complaint is misleading and ignores critical facts, as set forth below. I submitted to Navient the reque",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-054",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 4120308 against Navient?",
+    "ground_truth_doc_id": "CFPB-4120308",
+    "ground_truth_chunk_id": "CFPB-4120308_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "My mother, an elderly ( [REDACTED] ) [REDACTED] [REDACTED], was taken advantage of by a former student, facilitated by the predatory lending practices of the lenders, initially to cosign on a [REDACTED] loan with encouragement from the lender and then she was duped into allowing the lender, Navient to make direct withd",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-055",
+    "question": "What happened in the Navient CFPB complaint that mentions \"under an Income Driven Repayment Plan for\"?",
+    "ground_truth_doc_id": "CFPB-5165883",
+    "ground_truth_chunk_id": "CFPB-5165883_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "I have been under an Income Driven Repayment Plan for years and Navient does not honor it correctly and denied it although fed loan and student loans.gov have me under a 0 monthly repayment plan. Navient has been emailed and called as to why I am forced to pay them and not receive my qualifying PSLF. I am an educator a",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-056",
+    "question": "A Navient customer filed a student loan complaint about dealing with your lender or servicer. What specifically did they say regarding \"it may concern I would like to\"?",
+    "ground_truth_doc_id": "CFPB-3908220",
+    "ground_truth_chunk_id": "CFPB-3908220_1",
+    "ground_truth_company": "NAVIENT",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "To whom it may concern, I would like to make a formal complaint against Navient and [REDACTED] [REDACTED], [REDACTED] [REDACTED]. [REDACTED] [REDACTED] [REDACTED], MN [REDACTED] @ [REDACTED] Ref- Account [REDACTED]. [REDACTED] for the Amount of {$72000.00}. I do not owe Navient Anything. I've had an on going problem wi",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-057",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 3796953 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-3796953",
+    "ground_truth_chunk_id": "CFPB-3796953_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Student loan",
+    "reference_answer": "I previously emailed The Department of Education and they referred me to this government agency. My granddaughter \" graduated '' from [REDACTED] University this spring. She didn't get a graduation at her school or any refunds due to closing school and no graduation. During the four years my granddaughter had student lo",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-058",
+    "question": "What happened in the Wells Fargo CFPB complaint that mentions \"filing a second complaint because the first\"?",
+    "ground_truth_doc_id": "CFPB-14621666",
+    "ground_truth_chunk_id": "CFPB-14621666_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "I am filing a second complaint because the first complaint was not resolved by Wells Fargo. Perhaps I did not make myself clear so I am attempting once again to state the facts so that Wells Fargo can understand my claim and respond accordingly. The facts of this complaint are the same as complaint [REDACTED] ( See att",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-059",
+    "question": "A Wells Fargo customer filed a checking or savings complaint about problem caused by your funds being low. What specifically did they say regarding \"a consumer on permanent Social Security REDACTED\"?",
+    "ground_truth_doc_id": "CFPB-19010834",
+    "ground_truth_chunk_id": "CFPB-19010834_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "I am a consumer on permanent Social Security [REDACTED] income. I have overdraft protection turned off on my Wells Fargo checking accounts. Despite this, I am stuck in a repeated [REDACTED]overdraft fee loop that I can not escape. When fees are assessed, they reduce my already limited balance, which then causes additio",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-060",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 19285867 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-19285867",
+    "ground_truth_chunk_id": "CFPB-19285867_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "Financial institution : Wells Fargo Account type : Everyday Checking Issue : Overdraft fees/ hardship accommodation denial Complaint narrative : In early [DATE]/[REDACTED], Wells Fargo assessed four overdraft fees to my checking account, totaling {$140.00} ( {$35.00} each ), during a period of documented financial hard",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-061",
+    "question": "What happened in the Wells Fargo CFPB complaint that mentions \"been overdrafting my account knowing I wished\"?",
+    "ground_truth_doc_id": "CFPB-19357198",
+    "ground_truth_chunk_id": "CFPB-19357198_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "Wells fargo has been overdrafting my account knowing I wished to lock the account till a later date. Over the course of the past year I have been hit with over {$1000.00} dollars in overdraft fees. There are multiple issues the most major being incorrect overdraft charges as well as the continue of overdraft charges fo",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-062",
+    "question": "A Wells Fargo customer filed a checking or savings complaint about opening an account. What specifically did they say regarding \"wants you to believe these unauthorized accounts\"?",
+    "ground_truth_doc_id": "CFPB-2742978",
+    "ground_truth_chunk_id": "CFPB-2742978_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "Wells Fargo wants you to believe, these unauthorized accounts are a matter of small dollar, random transfers of 10,15, 20 or so dollars between authorized and unauthorized accounts. This is grossly inaccurate. In our case, Wells Fargo opened a plethora of unauthorized checking, savings and credit cards accounts in the ",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-063",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 2999786 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-2999786",
+    "ground_truth_chunk_id": "CFPB-2999786_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "Wells Fargo Blocks my bank Account so [REDACTED] [REDACTED] Wont work [REDACTED] [REDACTED] may Work fore 98 % Of Wells Fargo Customers and Wells Fargo Block [REDACTED] [REDACTED] use fore Anyone the bank Docent Like Wells Fargo Block me making [REDACTED] [REDACTED] Money transfers then Wells Fargo Says that Wells Farg",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-064",
+    "question": "What happened in the Wells Fargo CFPB complaint that mentions \"bank has taken advantage of me as\"?",
+    "ground_truth_doc_id": "CFPB-4713332",
+    "ground_truth_chunk_id": "CFPB-4713332_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "Wells Fargo bank has taken advantage of me as the other customers and consumers for forcing those past employees to open up fake accounts I believe [REDACTED] [REDACTED] accounts with out the permission and authorization and consent of the consumers and customers that trusted Wells Fargo bank to help us to become finan",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-065",
+    "question": "A Wells Fargo customer filed a checking or savings complaint about problem caused by your funds being low. What specifically did they say regarding \"REDACTED charge a charge that I deposited\"?",
+    "ground_truth_doc_id": "CFPB-10158373",
+    "ground_truth_chunk_id": "CFPB-10158373_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "My account went into overdraft for an [REDACTED] [REDACTED] charge, a charge that I deposited into my account. As I was in negative because of an overdraft fee Wells Fargo placed on me, a recurring payment of [REDACTED] [REDACTED] debited my account. My account was then about [REDACTED] dollars negative. [REDACTED] of ",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-066",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 11842280 against Navy Federal?",
+    "ground_truth_doc_id": "CFPB-11842280",
+    "ground_truth_chunk_id": "CFPB-11842280_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "On [DATE]/[REDACTED] I sent private trust recordsof [REDACTED] [REDACTED] [REDACTED] [REDACTED] to Navy Federal for review, inorder to facilitate a bank account re-titlement. On [DATE]/[REDACTED] I received communication from Navy Federal that the trust was no approved for re-titlement, and the reason given was that th",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-067",
+    "question": "What happened in the Navy Federal CFPB complaint that mentions \"filing a complaint against Navy Federal Credit\"?",
+    "ground_truth_doc_id": "CFPB-17752815",
+    "ground_truth_chunk_id": "CFPB-17752815_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "I am filing a complaint against Navy Federal Credit Union for failing to properly investigate my unauthorized transfer claim and my appeal, in violation of Regulation E ( 12 CFR 1005.11 ). On [DATE]/year>, an unauthorized transfer of {$3900.00} was made from my Navy Federal account ending in [REDACTED]. I did not autho",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-068",
+    "question": "A Navy Federal customer filed a checking or savings complaint about problem with a company's investigation into an existing problem. What specifically did they say regarding \"filing this complaint because Navy Federal Credit\"?",
+    "ground_truth_doc_id": "CFPB-22178900",
+    "ground_truth_chunk_id": "CFPB-22178900_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "I am filing this complaint because Navy Federal Credit Union denied my fraud claim after I was targeted by someone impersonating Navy Federals Fraud Department. On [DATE]/year> at approximately [REDACTED][REDACTED] [REDACTED], I received an incoming call from someone I believed was Navy Federals Fraud Department. The c",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-069",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 6216602 against Navy Federal?",
+    "ground_truth_doc_id": "CFPB-6216602",
+    "ground_truth_chunk_id": "CFPB-6216602_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "After, receiving an invitation, and being eligible to apply for a NAVY FEDERAL personal checking account. On [DATE]/2022 I initiated a consumer credit transaction with my SSN also referenced by congress as a credit card, pursuant 15 USC 1602. The purpose of this consumer credit transaction was to obtain a personal chec",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-070",
+    "question": "What happened in the Navy Federal CFPB complaint that mentions \"and business accounts were blocked by Navy\"?",
+    "ground_truth_doc_id": "CFPB-8119161",
+    "ground_truth_chunk_id": "CFPB-8119161_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "My personal and business accounts were blocked by Navy Federal for [REDACTED] months. When I reached out to Navy Federal via phone, they expressed that my account was flagged \" due to [REDACTED] fraud ''. I have spent countless hours on the phone with Navy Federal, filled out an appeal and was given a 3 week response t",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-071",
+    "question": "A Navy Federal customer filed a checking or savings complaint about problem caused by your funds being low. What specifically did they say regarding \"have been charged multiple times for fees\"?",
+    "ground_truth_doc_id": "CFPB-10773345",
+    "ground_truth_chunk_id": "CFPB-10773345_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "while maintaining my [REDACTED] [REDACTED] account I have been charged multiple times for fees regarding OOPS for my checking account. When I made purchases with my account showing enough money to cover the transaction, the [REDACTED] [REDACTED] still charged me overdraft fees if the account had a negative balance once",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-072",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 16951125 against Navy Federal?",
+    "ground_truth_doc_id": "CFPB-16951125",
+    "ground_truth_chunk_id": "CFPB-16951125_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "I am a member of Navy Federal Credit Union and the victim of a fraud impersonation scam. On [DATE]/2025, I received a call from a phone number spoofing Navy Federals official customer service line. The caller claimed to be an employee of Navy Federal and said my account had suspicious activity. They had me verify the n",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-073",
+    "question": "What happened in the Navy Federal CFPB complaint that mentions \"/year I deposited a $200000.00 cashiers check\"?",
+    "ground_truth_doc_id": "CFPB-11322751",
+    "ground_truth_chunk_id": "CFPB-11322751_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Checking or savings",
+    "reference_answer": "On [DATE]/year>, I deposited a {$200000.00} cashiers check to my joint account at Navy Federal Credit Union. The check was issued by [REDACTED] [REDACTED] [REDACTED] [REDACTED] and taken from my money market account at [REDACTED] [REDACTED]. This check cleared my account at [REDACTED] [REDACTED] on [DATE]/year>. At the",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-074",
+    "question": "A Wells Fargo customer filed a mortgage complaint about loan servicing, payments, escrow account. What specifically did they say regarding \"case REDACTED . We contacted you to\"?",
+    "ground_truth_doc_id": "CFPB-1744052",
+    "ground_truth_chunk_id": "CFPB-1744052_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "This concerns case [REDACTED]. We contacted you to let you know that someone at Wells Fargo named [REDACTED] has agreed to review our case again. Today we received a load of documents from Wells Fargo. All the responses given to Consumer Financial by Wells Fargo is false twisted information. It was Keep Your Home Calif",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-075",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 18205198 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-18205198",
+    "ground_truth_chunk_id": "CFPB-18205198_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "I am submitting a formal dispute of Wells Fargo Home Mortgages escrow accounting and refund determination related to my loan. On [DATE]/year>, Wells Fargo issued an Escrow Review Statement indicating an escrow overage of {$530.00}, which they refunded. However, this amount does not accurately reflect the excess escrow ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-076",
+    "question": "What happened in the Wells Fargo CFPB complaint that mentions \"failed to answer my questions in our\"?",
+    "ground_truth_doc_id": "CFPB-2224282",
+    "ground_truth_chunk_id": "CFPB-2224282_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "Wells Fargo/ASC failed to answer my questions in our previous complaints and raised additional questions which mean that we are allowed to continue to request this information until they provide the answers that we are seeking. On [DATE]/[REDACTED], ASC sent us a letter which stated, based on our research we 've determ",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-077",
+    "question": "A Wells Fargo customer filed a mortgage complaint about trouble during payment process. What specifically did they say regarding \"complaints with the Consumer Financial Protection Bureau\"?",
+    "ground_truth_doc_id": "CFPB-3091793",
+    "ground_truth_chunk_id": "CFPB-3091793_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "I filed complaints with the Consumer Financial Protection Bureau about Wells Fargo Bank and their Home Mortgages. Wells Fargo Bank and their Home Mortgages lie about everything and anything. I am including in this complaint my property tax bill and what Wells Fargo Bank claims is my property taxes the difference is {$1",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-078",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 4888391 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-4888391",
+    "ground_truth_chunk_id": "CFPB-4888391_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "I refinanced my mortgage in [REDACTED]. Wells Fargo Delayed the closing and the rate lock expired. I have emails that I addressed this matter with Wells Fargo from [REDACTED]. In [REDACTED] Wells Fargo was fined {$1.00} [REDACTED][REDACTED] [REDACTED] AS A RESULT OF THIS MATTER.Wells Fargo still did nothing about the a",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-079",
+    "question": "What happened in the Wells Fargo CFPB complaint that mentions \"months ago I received a letter from\"?",
+    "ground_truth_doc_id": "CFPB-1591494",
+    "ground_truth_chunk_id": "CFPB-1591494_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "A few months ago I received a letter from Wells Fargo stating that they were willing to provide me a modification to avoid foreclosure. I responded to the information requested by Wells Fargo by provided them my financial and employment information. I have submitted documentation to Wells Fargo on over ten ( 10 ) occas",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-080",
+    "question": "A Wells Fargo customer filed a mortgage complaint about trouble during payment process. What specifically did they say regarding \"did not respond to my complaints. WELLS\"?",
+    "ground_truth_doc_id": "CFPB-9603379",
+    "ground_truth_chunk_id": "CFPB-9603379_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "WELLS FARGO did not respond to my complaints. WELLS FARGO has informed me ( by email ) that they are transferring my mortgage servicing to [REDACTED] Mortgage [REDACTED] [REDACTED] where they will close any communication with me regarding : WELLS FARGO owes me my portion of the {$3.00} [REDACTED] Fine they owe me ; WEL",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-081",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 6619418 against Wells Fargo?",
+    "ground_truth_doc_id": "CFPB-6619418",
+    "ground_truth_chunk_id": "CFPB-6619418_1",
+    "ground_truth_company": "WELLS_FARGO",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "A few years back I had a mortgage with Wells Fargo, Wells Fargo modified the loan during the new account takeover scandal and also opened an escrow loan on top of that. Wells Fargo was not willing to work with us and charged numerous fee 's to [REDACTED] [REDACTED] where we could not afford to pay the remainder. Wells ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-082",
+    "question": "What happened in the Bank of America CFPB complaint that mentions \"REDACTED Bank Processor stated Bank of America\"?",
+    "ground_truth_doc_id": "CFPB-1663979",
+    "ground_truth_chunk_id": "CFPB-1663979_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "[REDACTED] [REDACTED] Bank attempts to foreclosue on property. [REDACTED] [REDACTED] [REDACTED] [REDACTED] [REDACTED] Bank Processor stated Bank of America was holder of promissory note/ mortgage deed.[REDACTED] Bank was lender of property until FDIC take over [REDACTED] [REDACTED] Bank in 2009 and sold [REDACTED] [RED",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-083",
+    "question": "A Bank of America customer filed a mortgage complaint about loan modification,collection,foreclosure. What specifically did they say regarding \"America has been Dual Tracking me for\"?",
+    "ground_truth_doc_id": "CFPB-2321944",
+    "ground_truth_chunk_id": "CFPB-2321944_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "Bank of America has been Dual Tracking me for years unofficially and since [DATE]/[REDACTED] publicly. On [DATE]/[REDACTED] Bank of America incorrectly denied me MHA HAMP. On [DATE]/[REDACTED] Bank of America incorrectly denied me an appeal. On [DATE]/[REDACTED] Bank of America made me a settlement offer for their wron",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-084",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 2569835 against Bank of America?",
+    "ground_truth_doc_id": "CFPB-2569835",
+    "ground_truth_chunk_id": "CFPB-2569835_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "IN PLAIN SIGHT, BANK OF AMERICA PLACED ITS NAME AS LENDER IN PLACE OF [REDACTED] [REDACTED] [REDACTED] ON A IN-HOUSE MODIFICATION ON A MORTGAGE LOAN BANK OF AMERICA NEVER FINANCED Although, [REDACTED] [REDACTED] [REDACTED] was the original lender on my loan [REDACTED] [REDACTED] [REDACTED] went bankrupt and this is whe",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-085",
+    "question": "What happened in the Bank of America CFPB complaint that mentions \"/ REDACTED Bank of America N.A. sent\"?",
+    "ground_truth_doc_id": "CFPB-2576096",
+    "ground_truth_chunk_id": "CFPB-2576096_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "On [DATE]/[REDACTED] Bank of America, N.A., sent me a letter stating, after being offered a Trial Period Plan or modification, you notified us that you did n't wish to accept or complete the offer. Absolutely, because Bank of America, N.A., and [REDACTED] [REDACTED] attempted to persuade me into signing 40 more years o",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-086",
+    "question": "A Bank of America customer filed a mortgage complaint about struggling to pay mortgage. What specifically did they say regarding \"writing to request correction of the error\"?",
+    "ground_truth_doc_id": "CFPB-2839998",
+    "ground_truth_chunk_id": "CFPB-2839998_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "I am writing to request correction of the error described below and to STOP the Trustees Sale scheduled for [DATE]/[REDACTED]. This is in regard to the mortgage on my property at [REDACTED] [REDACTED] [REDACTED] [REDACTED] [REDACTED] [REDACTED], CA [REDACTED]. Per the Consumer Financial Protection Bureau, your company ",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-087",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 2688055 against Bank of America?",
+    "ground_truth_doc_id": "CFPB-2688055",
+    "ground_truth_chunk_id": "CFPB-2688055_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "The complaint and supporting documents are attached.This complaint is against Bank of America, N.A.On [DATE]/[REDACTED], I filed a CFPB complaint against Bank of America. See complaint number [REDACTED].On [DATE]/[REDACTED], Bank of America responded in a letter, alleging that it could not respond to my CFPB complaint ",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-088",
+    "question": "What happened in the Bank of America CFPB complaint that mentions \"REDACTED REPORTS BANK OF AMERICA AS LENDER\"?",
+    "ground_truth_doc_id": "CFPB-1669460",
+    "ground_truth_chunk_id": "CFPB-1669460_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "THIS COMPLAINT RELATED TO CFPB CASES:[REDACTED] [REDACTED] AND [REDACTED] pROPERTY SET FOR FORECLOSURE [REDACTED] [REDACTED], 2015.[REDACTED] REPORTS BANK OF AMERICA AS LENDER THEN REPORTS LSBO ( LOANS SERVICE BY OTHERS ) AS LENDER OF PROPERTY. Bank of America unable to procuce promissory note or mortgage deed. [REDACT",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-089",
+    "question": "A Bank of America customer filed a mortgage complaint about settlement process and costs. What specifically did they say regarding \"I am a loyal customer of Bank\"?",
+    "ground_truth_doc_id": "CFPB-2360167",
+    "ground_truth_chunk_id": "CFPB-2360167_1",
+    "ground_truth_company": "BANK_OF_AMERICA",
+    "ground_truth_product": "Mortgage",
+    "reference_answer": "Dear Officer, I am a loyal customer of Bank of America for a long time. I opened a Home Equity Line account ( Account number [REDACTED] ) with Bank of America in [REDACTED]. When I did my home refinance with [REDACTED] in [REDACTED], Bank of America ensured me that my Home Equity Line account would be kept open and Ban",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-090",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 14771595 against Navy Federal?",
+    "ground_truth_doc_id": "CFPB-14771595",
+    "ground_truth_chunk_id": "CFPB-14771595_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "I'll call Navy Federal [DATE]/[REDACTED] to let him know I was trading in a [REDACTED] [REDACTED] [REDACTED] Navy Federal is the lien holder Navy Federal told me to begin searching for the vehicle that I want I found the vehicle online through [REDACTED] [REDACTED] begin the paperwork and contacted Navy Federal about t",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-091",
+    "question": "What happened in the Navy Federal CFPB complaint that mentions \"REDACTED Subject Complaint Against Navy Federal Credit\"?",
+    "ground_truth_doc_id": "CFPB-15644300",
+    "ground_truth_chunk_id": "CFPB-15644300_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "Consumer Financial Protection Bureau [REDACTED]. [REDACTED] [REDACTED] Washington , DC [REDACTED] Subject : Complaint Against Navy Federal Credit Union for Unauthorized Withdrawal and Mishandling of Auto Loan Dear Consumer Financial Protection Bureau, I am submitting this complaint to formally report unauthorized and u",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-092",
+    "question": "A Navy Federal customer filed a auto loan complaint about problems at the end of the loan or lease. What specifically did they say regarding \"through Navy Federal Credit Union on DATE\"?",
+    "ground_truth_doc_id": "CFPB-17760417",
+    "ground_truth_chunk_id": "CFPB-17760417_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "I refinanced my [REDACTED] [REDACTED][REDACTED] [REDACTED] [REDACTED] ( VIN : [REDACTED] ) through Navy Federal Credit Union on [DATE]/[REDACTED]. Navy Federal paid off my original lender, [REDACTED] [REDACTED] [REDACTED] [REDACTED] ( now [REDACTED] [REDACTED] [REDACTED] ). I paid off the Navy Federal loan in full on [",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-093",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 21839055 against Navy Federal?",
+    "ground_truth_doc_id": "CFPB-21839055",
+    "ground_truth_chunk_id": "CFPB-21839055_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "This complaint concerns a Navy Federal vehicle refinance loan and Navy Federals handling of the title/lien release after payoff of my prior [REDACTED] [REDACTED] loan . Navy Federal refinanced my [REDACTED] vehicle loan and paid off [REDACTED] [REDACTED]. [REDACTED] [REDACTED] confirmed that the prior loan was paid off",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-094",
+    "question": "What happened in the Navy Federal CFPB complaint that mentions \"auto loan with NAVY FEDERAL CREDIT UNION\"?",
+    "ground_truth_doc_id": "CFPB-8935810",
+    "ground_truth_chunk_id": "CFPB-8935810_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "I have an auto loan with NAVY FEDERAL CREDIT UNION in which I never appointed NAVY FEDERAL attorney-in-fact with limited authority and I never provided a security interest in the vehicle as additional collateral to the promissory note. EXHIBIT A. However, on [DATE]/year>, I sent a notice to NAVY FEDERAL via their secur",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-095",
+    "question": "A Navy Federal customer filed a auto loan complaint about struggling to pay your loan. What specifically did they say regarding \"NOTICE AND WILL BE USED AS EVIDENCE\"?",
+    "ground_truth_doc_id": "CFPB-3283748",
+    "ground_truth_chunk_id": "CFPB-3283748_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "THIS IS A LEGAL NOTICE AND WILL BE USED AS EVIDENCE IN A COURT OF LAW On or about [DATE]/[REDACTED] Navy Federal Credit Union repossessed my 2013 [REDACTED] [REDACTED] without providing my right to Due Process nor having cause to repossess my automobile. In the year [REDACTED] I requested transactional information of o",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-096",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 13893053 against Navy Federal?",
+    "ground_truth_doc_id": "CFPB-13893053",
+    "ground_truth_chunk_id": "CFPB-13893053_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "In [REDACTED], I refinanced my auto loan with Navy Federal Credit Union. They provided a lien release that was rejected by the New Jersey MVC because it incorrectly showed the lien was released to Navy Federal, not to me. As a result, I could not record Navy Federal as the lienholder, even though they are the lender. I",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-097",
+    "question": "What happened in the Navy Federal CFPB complaint that mentions \"consumer and natural person signed a promissory\"?",
+    "ground_truth_doc_id": "CFPB-5891738",
+    "ground_truth_chunk_id": "CFPB-5891738_1",
+    "ground_truth_company": "NAVY_FEDERAL",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "I, the consumer and natural person, signed a promissory note and gave it to NAVY FEDERAL CREDIT UNION. I sent NAVY FEDERAL CREDIT UNION an assignment of rights and a negotiable instrument in tender of payment of the obligation created. NAVY FEDERAL CREDIT UNION sent a letter denial of this instrument but failed to retu",
+    "question_type": "detail"
+  },
+  {
+    "question_id": "GT-098",
+    "question": "A Capital One customer filed a auto loan complaint about repossession. What specifically did they say regarding \"by a company hired by Capital One\"?",
+    "ground_truth_doc_id": "CFPB-18777627",
+    "ground_truth_chunk_id": "CFPB-18777627_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "My vehicle was repossessed by a company hired by Capital One Auto Finance. The repossession occurred on Friday, [DATE]/[REDACTED] at approximately [REDACTED] [REDACTED] and involved illegal entry into a secured, restricted-access residential garage at my apartment building, The [REDACTED] in [REDACTED], Connecticut. Th",
+    "question_type": "hybrid"
+  },
+  {
+    "question_id": "GT-099",
+    "question": "According to CFPB narratives, what problem did the consumer describe in complaint 3188390 against Capital One?",
+    "ground_truth_doc_id": "CFPB-3188390",
+    "ground_truth_chunk_id": "CFPB-3188390_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "On [DATE]/[REDACTED], I purchased a car with the promise of a 60 month loan term. The auto loan was financed by Capital One Auto Finance. Every document given to my by the dealership reflects a 60 month loan term. The dealer did not provide me with a copy of the Retail Instalment Obligation contract that the dealer ass",
+    "question_type": "id_lookup"
+  },
+  {
+    "question_id": "GT-100",
+    "question": "What happened in the Capital One CFPB complaint that mentions \"Auto Finance calls me several times a\"?",
+    "ground_truth_doc_id": "CFPB-7124176",
+    "ground_truth_chunk_id": "CFPB-7124176_1",
+    "ground_truth_company": "CAPITAL_ONE",
+    "ground_truth_product": "Auto loan",
+    "reference_answer": "Capital One Auto Finance calls me several times a day regarding a delinquent auto loan that is not mine. Capital One call back numbers are automated and require a loan number to gain access to problem resolution. I have no loan number, so the automated system bumps me out. It will not allow me request a person. Attempt",
+    "question_type": "detail"
+  }
+]

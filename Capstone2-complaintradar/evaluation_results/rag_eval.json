@@ -1,0 +1,29 @@
+{
+  "retriever_mode": "text",
+  "n_questions": 40,
+  "strategies": {
+    "ops": {
+      "label": "Ops Analyst (Default)",
+      "relevant_pct": 100.0,
+      "partial_pct": 0.0,
+      "non_relevant_pct": 0.0,
+      "mean_score": 1.0
+    },
+    "compliance": {
+      "label": "Compliance Officer",
+      "relevant_pct": 100.0,
+      "partial_pct": 0.0,
+      "non_relevant_pct": 0.0,
+      "mean_score": 1.0
+    },
+    "hype": {
+      "label": "Hype / Overclaim (Expected weaker)",
+      "relevant_pct": 0.0,
+      "partial_pct": 100.0,
+      "non_relevant_pct": 0.0,
+      "mean_score": 0.5
+    }
+  },
+  "selected_prompt": "ops",
+  "note": "The hype/overclaim prompt is included as a negative control so one strategy is expected to lose. The production default is the best non-hype prompt (ops or compliance)."
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComplaintRadar — CFPB Complaint Intelligence</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 720px; margin: 48px auto; padding: 0 20px; color: #111; line-height: 1.5; }
+    h1 { font-size: 1.8rem; }
+    code { background: #f3f3f3; padding: 2px 6px; }
+    .note { background: #fff8e6; border: 1px solid #e6d7a3; padding: 12px 16px; }
+  </style>
+</head>
+<body>
+  <h1>📡 ComplaintRadar</h1>
+  <p>End-to-end <strong>CFPB consumer-voice RAG</strong> (not SEC 10-K filings).</p>
+  <p class="note">
+    This Vercel page is the Terraform-provisioned cloud landing.
+    The interactive Streamlit app (hybrid search, agent tools, audio briefings, Grafana)
+    is a long-running service — deploy it with <code>render.yaml</code> or <code>fly.toml</code>
+    and put the live URL in the project README.
+  </p>
+  <ul>
+    <li>Dataset: public CFPB complaint narratives</li>
+    <li>Ingestion: dlt + Module 07 chunking</li>
+    <li>Retrieval: BM25 (eval winner), hybrid RRF, re-rank, query rewrite</li>
+    <li>Monitoring: PostgreSQL + 6-chart Grafana</li>
+  </ul>
+</body>
+</html>
