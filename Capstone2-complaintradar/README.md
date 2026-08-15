@@ -681,4 +681,3 @@ We provisioned cloud infrastructure with **Terraform** and the official **Google
 ### Step 11: Git Repository Initialization, Commit & GitHub Peer Review Submission
 We initialized / updated the repository, added `.gitignore` to exclude temporary environments, databases, and Terraform state, committed all files (`git commit -m "feat: complete ComplaintRadar CFPB RAG capstone 2"`), pushed to the public GitHub repository, and generated the 40-character `commit-hash` (`git rev-parse HEAD`) for course peer review evaluation.
 
-**Suggested repo path:** [https://github.com/yazdanparasthesam/llm-zoomcamp/tree/main/Capstone2-complaintradar](https://github.com/yazdanparasthesam/llm-zoomcamp/tree/main/Capstone2-complaintradar)
