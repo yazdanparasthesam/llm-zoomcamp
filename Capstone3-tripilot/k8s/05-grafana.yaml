@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tripilot-grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tripilot-grafana
+  template:
+    metadata:
+      labels:
+        app: tripilot-grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:10.2.3
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 24
+          envFrom:
+            - configMapRef:
+                name: tripilot-config
+            - configMapRef:
+                name: tripilot-grafana-provisioning
+          env:
+            - name: GF_SECURITY_ADMIN_USER
+              value: admin
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: admin
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: tripilot-secret
+                  key: POSTGRES_PASSWORD
+          volumeMounts:
+            - name: grafana-config
+              mountPath: /etc/grafana/provisioning
+            - name: grafana-dashboards
+              mountPath: /var/lib/grafana/dashboards
+      volumes:
+        - name: grafana-config
+          configMap:
+            name: tripilot-grafana-files
+            items:
+              - key: datasources.yaml
+                path: datasources/datasources.yaml
+              - key: dashboards.yaml
+                path: dashboards/dashboards.yaml
+        - name: grafana-dashboards
+          configMap:
+            name: tripilot-grafana-dashboard
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tripilot-grafana
+spec:
+  selector:
+    app: tripilot-grafana
+  ports:
+    - port: 3000
+      targetPort: 3000

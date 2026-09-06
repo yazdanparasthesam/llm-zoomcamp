@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tripilot-grafana-provisioning
+data:
+  POSTGRES_HOST: tripilot-postgres
+  POSTGRES_DB: tripilot_db
+  POSTGRES_USER: postgres
+---
+# Small provisioning shim: mounts datasource/dashboard provider yamls.
+# k8s/README-k8s.md shows how to regenerate the dashboard ConfigMap from
+# grafana/dashboards/tripilot_dashboard.json:
+#   kubectl create configmap tripilot-grafana-dashboard \
+#     --from-file=tripilot_dashboard.json=grafana/dashboards/tripilot_dashboard.json
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tripilot-grafana-files
+data:
+  datasources.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: TripPilot-Postgres
+        uid: tripilot-postgres
+        type: postgres
+        access: proxy
+        url: tripilot-postgres:5432
+        database: tripilot_db
+        user: postgres
+        secureJsonData:
+          password: postgres
+        jsonData:
+          sslmode: disable
+          timescaledb: false
+        isDefault: true
+  dashboards.yaml: |
+    apiVersion: 1
+    providers:
+      - name: tripilot-dashboards
+        type: file
+        updateIntervalSeconds: 10
+        options:
+          path: /var/lib/grafana/dashboards

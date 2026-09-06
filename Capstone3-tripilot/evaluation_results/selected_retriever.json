@@ -1,0 +1,5 @@
+{
+  "selected_mode": "hybrid_rerank",
+  "reason": "max chunk MRR@5 (tiebreak doc MRR@5)",
+  "eval_file": "evaluation_results/retrieval_eval.json"
+}

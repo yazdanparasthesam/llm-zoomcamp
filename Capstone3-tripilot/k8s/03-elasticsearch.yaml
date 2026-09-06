@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tripilot-elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tripilot-elasticsearch
+  template:
+    metadata:
+      labels:
+        app: tripilot-elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1
+          ports:
+            - containerPort: 9200
+          env:
+            - name: discovery.type
+              value: single-node
+            - name: xpack.security.enabled
+              value: "false"
+            - name: ES_JAVA_OPTS
+              value: -Xms256m -Xmx256m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tripilot-elasticsearch
+spec:
+  selector:
+    app: tripilot-elasticsearch
+  ports:
+    - port: 9200
+      targetPort: 9200

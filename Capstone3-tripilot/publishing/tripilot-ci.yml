@@ -1,0 +1,66 @@
+name: TripPilot CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Capstone3-tripilot/**'
+      - '.github/workflows/tripilot-ci.yml'
+  pull_request:
+    paths:
+      - 'Capstone3-tripilot/**'
+      - '.github/workflows/tripilot-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: Capstone3-tripilot
+    env:
+      LLM_PROVIDER: groq
+      GROQ_API_KEY: ''
+      OPENAI_API_KEY: ''
+      AMADEUS_API_KEY: ''
+      AMADEUS_API_SECRET: ''
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Capstone3-tripilot/requirements.txt
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Verify deterministic snapshot and ground truth
+        run: |
+          sha256sum data/reviews_snapshot.json data/ground_truth_qa.json > /tmp/tripilot-before.sha
+          python3 data/generate_snapshot.py
+          python3 data/generate_ground_truth.py
+          sha256sum -c /tmp/tripilot-before.sha
+
+      - name: dlt ingestion
+        run: python3 ingestion/hotel_reviews_pipeline.py
+
+      - name: Chunking and local embeddings
+        run: python3 -m src.ingest
+
+      - name: Retrieval evaluation in the disposable CI checkout
+        run: python3 -m src.eval_retrieval
+
+      - name: Offline pytest suite
+        run: python3 -m pytest tests/ -q
+
+      - name: Docker image build
+        run: docker build -t tripilot-app:ci .

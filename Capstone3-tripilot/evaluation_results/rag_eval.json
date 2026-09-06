@@ -1,0 +1,33 @@
+{
+  "n_questions": 15,
+  "strategies": {
+    "travel_planner": {
+      "distribution": {
+        "RELEVANT": 15,
+        "PARTIALLY_RELEVANT": 0,
+        "NON_RELEVANT": 0
+      },
+      "mean_judge_score": 1.0,
+      "relevant_pct": 100.0
+    },
+    "relocation_advisor": {
+      "distribution": {
+        "RELEVANT": 15,
+        "PARTIALLY_RELEVANT": 0,
+        "NON_RELEVANT": 0
+      },
+      "mean_judge_score": 1.0,
+      "relevant_pct": 100.0
+    },
+    "hype_luxury": {
+      "distribution": {
+        "RELEVANT": 0,
+        "PARTIALLY_RELEVANT": 15,
+        "NON_RELEVANT": 0
+      },
+      "mean_judge_score": 0.5,
+      "relevant_pct": 0.0
+    }
+  },
+  "judge": "offline-heuristic"
+}
