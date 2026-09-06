@@ -1,0 +1,47 @@
+# Local environments and secrets (keep the public configuration example)
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.dlt/secrets.toml
+.git-credentials
+.netrc
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python, tooling, and OS caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.DS_Store
+
+# Runtime telemetry and generated caches; committed snapshots/evaluations stay tracked
+data/tripilot_monitoring.db*
+data/*.sqlite*
+data/tripilot.duckdb*
+data/query_log.jsonl
+data/index_cache.json
+data/normalized/
+duckdb_data/
+.dlt/pipelines/
+
+# Terraform/cloud state and local configuration
+.terraform/
+*.tfstate*
+*.tfvars
+*.tfvars.json
+
+# Distribution bundles belong outside the project, not in Git
+*.zip
+*.tar
+*.tar.gz
+*.tgz

@@ -1,0 +1,15 @@
+.git
+.github
+__pycache__
+*.pyc
+.venv
+venv
+.env
+data/tripilot_monitoring.db
+data/tripilot.duckdb
+data/query_log.jsonl
+data/index_cache.json
+data/normalized
+terraform/.terraform
+terraform/*.tfstate*
+docs/images
