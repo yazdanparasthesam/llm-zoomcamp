@@ -1,0 +1,82 @@
+services:
+  app:
+    build: .
+    container_name: tripilot_app
+    ports:
+      - "8501:8501"
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: tripilot_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      ELASTICSEARCH_HOST: elasticsearch
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      LLM_PROVIDER: ${LLM_PROVIDER:-groq}
+      AMADEUS_API_KEY: ${AMADEUS_API_KEY:-}
+      AMADEUS_API_SECRET: ${AMADEUS_API_SECRET:-}
+      TRIPILOT_REAL_KAGGLE_CSV: ${TRIPILOT_REAL_KAGGLE_CSV:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "python3", "-c",
+             "import urllib.request;urllib.request.urlopen('http://localhost:8501/healthz',timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:16
+    container_name: tripilot_postgres
+    environment:
+      POSTGRES_DB: tripilot_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tripilot_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1
+    container_name: tripilot_elasticsearch
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "false"
+      ES_JAVA_OPTS: -Xms256m -Xmx256m
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200 >/dev/null || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  grafana:
+    image: grafana/grafana:10.2.3
+    container_name: tripilot_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: tripilot_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

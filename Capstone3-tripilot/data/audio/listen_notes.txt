@@ -1,0 +1,12 @@
+TripPilot audio briefings (multimodal extra)
+============================================
+Expected files in this directory (committed; regenerate with `make audio`):
+
+  paris_vs_lyon_briefing.mp3        Paris vs Lyon food-focused city break
+  barcelona_beach_city_break.mp3    Barcelona beach + city break
+  eastern_europe_value_briefing.mp3 Prague / Budapest / Split value circuit
+
+Scripts: data/transcripts.txt (source of truth, evidence-based)
+Synthesis: Google TTS via `python3 data/generate_audio.py` (needs network).
+The Streamlit app hides players if files are absent and still shows
+transcripts — reviewers never hit a hard failure.

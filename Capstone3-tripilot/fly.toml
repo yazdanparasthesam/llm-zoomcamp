@@ -1,0 +1,44 @@
+# TripPilot: single-Machine Fly.io demo. Deployment is usage-billed, not an ongoing free tier.
+# See README Step 11 and docs/deploy-fly.md before creating resources.
+# Pass --app "$FLY_APP" to override this example name; deploy with --ha=false.
+app = "tripilot-app"
+primary_region = "iad"
+kill_signal = "SIGTERM"
+kill_timeout = 10
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  LLM_PROVIDER = "groq"
+  TRIPILOT_SQLITE = "/data/tripilot_monitoring.db"
+  TRIPILOT_QUERY_LOG = "/data/query_log.jsonl"
+
+[mounts]
+  source = "tripilot_data"
+  destination = "/data"
+  initial_size = "1gb"
+
+[http_service]
+  internal_port = 8501
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[http_service.concurrency]
+  type = "connections"
+  soft_limit = 20
+  hard_limit = 25
+
+[[http_service.checks]]
+  method = "GET"
+  path = "/healthz"
+  interval = "30s"
+  timeout = "5s"
+  grace_period = "60s"
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1

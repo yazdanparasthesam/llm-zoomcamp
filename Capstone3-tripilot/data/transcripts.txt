@@ -1,0 +1,44 @@
+TRIPILOT MULTIMODAL AUDIO BRIEFINGS — TRANSCRIPTS
+=================================================
+These transcripts back the destination audio briefings in data/audio/.
+They are generated from the HELD knowledge base (hotel reviews + city
+cost table) — never from the live LLM — so the audio is consistent
+with what the RAG layer answers.
+
+1) data/audio/paris_vs_lyon_briefing.mp3
+----------------------------------------
+"TripPilot destination briefing. Paris versus Lyon for a food-focused
+city break. In Paris, guests at Le Marais Boutique Hotel praise the
+location near the old town and the breakfast spread, but warn about
+small rooms and street noise; average review score eight point two.
+Budget one hundred seventy five euros per day midrange. Lyon, the
+gastronomy capital, scores higher on value: Hotel de la Cite guests
+highlight quiet rooms, fast wifi and staff who booked restaurants for
+them; average score eight point six, midrange budget one hundred
+thirty euros per day. If food and value matter more than landmarks,
+our evidence points to Lyon."
+
+2) data/audio/barcelona_beach_city_break.mp3
+--------------------------------------------
+"TripPilot destination briefing. Barcelona beach and city break.
+Barcelo Raval reviewers love the rooftop bar with skyline views and
+the walking-distance location, scoring eight point four on average,
+but mention breakfast queues during high season. Plan roughly one
+hundred thirty five euros per day midrange, four euros for a beer,
+and May, June or September for weather without peak crowds. The
+nearest airport is Barcelona El Prat, eleven minutes by taxi or
+twenty-five by aerobus to Placa Catalunya."
+
+3) data/audio/eastern_europe_value_briefing.mp3
+------------------------------------------------
+"TripPilot destination briefing. Best-value Eastern Europe: Prague,
+Budapest and Split. Prague reviewers highlight cheap beer at two
+euros twenty, a walkable old town and castle views; Hotel U Prince
+averages eight point seven with praise for its historic building.
+Budapest combines thermal baths and ruin bars at ninety euros a day
+midrange — guests at Hotel KB City Center call it great value but
+note thin walls. Split pairs a Roman palace with island sailing from
+May to September; Brown Beach House scores nine point one and is the
+highest rated property in our evidence base."
+
+END OF TRANSCRIPTS

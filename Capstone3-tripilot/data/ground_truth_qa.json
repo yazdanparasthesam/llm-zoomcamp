@@ -1,0 +1,257 @@
+[
+  {
+    "question_id": "Q001",
+    "question": "Summarize review REV-00001 for Hotel Arena (Amsterdam).",
+    "doc_id": "REV-00001"
+  },
+  {
+    "question_id": "Q002",
+    "question": "Is the breakfast at Hotel Arena (Amsterdam) worth it according to guests?",
+    "doc_id": "REV-00010"
+  },
+  {
+    "question_id": "Q003",
+    "question": "Summarize review REV-00016 for Hotel Danieli (Venice).",
+    "doc_id": "REV-00016"
+  },
+  {
+    "question_id": "Q004",
+    "question": "Does the WiFi at Hotel Danieli in Venice actually work for remote work?",
+    "doc_id": "REV-00028"
+  },
+  {
+    "question_id": "Q005",
+    "question": "Is Hotel Danieli in Venice good value for money for a budget traveler?",
+    "doc_id": "REV-00022"
+  },
+  {
+    "question_id": "Q006",
+    "question": "Is review REV-00040 about Park Plaza Westminster positive or negative, and why?",
+    "doc_id": "REV-00040"
+  },
+  {
+    "question_id": "Q007",
+    "question": "Is Park Plaza Westminster in London well located for sightseeing?",
+    "doc_id": "REV-00038"
+  },
+  {
+    "question_id": "Q008",
+    "question": "Summarize review REV-00049 for Le Marais Boutique Hotel (Paris).",
+    "doc_id": "REV-00049"
+  },
+  {
+    "question_id": "Q009",
+    "question": "Is Le Marais Boutique Hotel in Paris good value for money for a budget traveler?",
+    "doc_id": "REV-00049"
+  },
+  {
+    "question_id": "Q010",
+    "question": "Summarize review REV-00063 for Barcelo Raval (Barcelona).",
+    "doc_id": "REV-00063"
+  },
+  {
+    "question_id": "Q011",
+    "question": "Are the rooms at Barcelo Raval (Barcelona) small, noisy or comfortable?",
+    "doc_id": "REV-00064"
+  },
+  {
+    "question_id": "Q012",
+    "question": "How is the staff and service at Barcelo Raval in Barcelona?",
+    "doc_id": "REV-00068"
+  },
+  {
+    "question_id": "Q013",
+    "question": "What evidence do we have from review REV-00095 about Hotel Sacher Wien in Vienna?",
+    "doc_id": "REV-00095"
+  },
+  {
+    "question_id": "Q014",
+    "question": "What do guests say about the location of Hotel Sacher Wien, Vienna?",
+    "doc_id": "REV-00096"
+  },
+  {
+    "question_id": "Q015",
+    "question": "Summarize review REV-00101 for The Hoxton Shoreditch (London).",
+    "doc_id": "REV-00101"
+  },
+  {
+    "question_id": "Q016",
+    "question": "Any hidden fees or price complaints at The Hoxton Shoreditch (London)?",
+    "doc_id": "REV-00101"
+  },
+  {
+    "question_id": "Q017",
+    "question": "Summarize review REV-00119 for Riu Plaza Espana (Madrid).",
+    "doc_id": "REV-00119"
+  },
+  {
+    "question_id": "Q018",
+    "question": "How bad is the noise at Riu Plaza Espana in Madrid according to reviews?",
+    "doc_id": "REV-00116"
+  },
+  {
+    "question_id": "Q019",
+    "question": "Is review REV-00137 about Hotel de la Cite positive or negative, and why?",
+    "doc_id": "REV-00137"
+  },
+  {
+    "question_id": "Q020",
+    "question": "Any WiFi problems reported at Hotel de la Cite (Lyon)?",
+    "doc_id": "REV-00144"
+  },
+  {
+    "question_id": "Q021",
+    "question": "Are the reception staff at Hotel de la Cite (Lyon) friendly or rude?",
+    "doc_id": "REV-00140"
+  },
+  {
+    "question_id": "Q022",
+    "question": "Is review REV-00150 about Generator Hostel Mitte positive or negative, and why?",
+    "doc_id": "REV-00150"
+  },
+  {
+    "question_id": "Q023",
+    "question": "Is the breakfast at Generator Hostel Mitte (Berlin) worth it according to guests?",
+    "doc_id": "REV-00146"
+  },
+  {
+    "question_id": "Q024",
+    "question": "Is review REV-00166 about Grand Hotel Europa positive or negative, and why?",
+    "doc_id": "REV-00166"
+  },
+  {
+    "question_id": "Q025",
+    "question": "What do guests say about the location of Grand Hotel Europa, Prague?",
+    "doc_id": "REV-00165"
+  },
+  {
+    "question_id": "Q026",
+    "question": "Summarize review REV-00181 for Hotel Ibis Gare du Nord (Paris).",
+    "doc_id": "REV-00181"
+  },
+  {
+    "question_id": "Q027",
+    "question": "What do travelers complain or rave about regarding breakfast at Hotel Ibis Gare du Nord in Paris?",
+    "doc_id": "REV-00186"
+  },
+  {
+    "question_id": "Q028",
+    "question": "Summarize review REV-00196 for Mercure Roma Centro (Rome).",
+    "doc_id": "REV-00196"
+  },
+  {
+    "question_id": "Q029",
+    "question": "What do travelers complain or rave about regarding breakfast at Mercure Roma Centro in Rome?",
+    "doc_id": "REV-00188"
+  },
+  {
+    "question_id": "Q030",
+    "question": "Summarize review REV-00201 for Motel One Hauptbahnhof (Munich).",
+    "doc_id": "REV-00201"
+  },
+  {
+    "question_id": "Q031",
+    "question": "Will I sleep well at Motel One Hauptbahnhof (Munich) or is street noise a problem?",
+    "doc_id": "REV-00203"
+  },
+  {
+    "question_id": "Q032",
+    "question": "Is review REV-00222 about Hotel KB City Center positive or negative, and why?",
+    "doc_id": "REV-00222"
+  },
+  {
+    "question_id": "Q033",
+    "question": "What do reviews say about the rooms at Hotel KB City Center in Budapest?",
+    "doc_id": "REV-00223"
+  },
+  {
+    "question_id": "Q034",
+    "question": "What evidence do we have from review REV-00231 about Douro Royal Valley Hotel in Porto?",
+    "doc_id": "REV-00231"
+  },
+  {
+    "question_id": "Q035",
+    "question": "Any WiFi problems reported at Douro Royal Valley Hotel (Porto)?",
+    "doc_id": "REV-00241"
+  },
+  {
+    "question_id": "Q036",
+    "question": "What evidence do we have from review REV-00243 about Copenhagen Admiral Hotel in Copenhagen?",
+    "doc_id": "REV-00243"
+  },
+  {
+    "question_id": "Q037",
+    "question": "How bad is the noise at Copenhagen Admiral Hotel in Copenhagen according to reviews?",
+    "doc_id": "REV-00249"
+  },
+  {
+    "question_id": "Q038",
+    "question": "Summarize review REV-00261 for Hotel U Prince (Prague).",
+    "doc_id": "REV-00261"
+  },
+  {
+    "question_id": "Q039",
+    "question": "What do reviews say about the rooms at Hotel U Prince in Prague?",
+    "doc_id": "REV-00265"
+  },
+  {
+    "question_id": "Q040",
+    "question": "What evidence do we have from review REV-00271 about Westcord City Centre Hotel in Amsterdam?",
+    "doc_id": "REV-00271"
+  },
+  {
+    "question_id": "Q041",
+    "question": "Does the WiFi at Westcord City Centre Hotel in Amsterdam actually work for remote work?",
+    "doc_id": "REV-00281"
+  },
+  {
+    "question_id": "Q042",
+    "question": "Summarize review REV-00286 for The Telegraph Suites (Rome).",
+    "doc_id": "REV-00286"
+  },
+  {
+    "question_id": "Q043",
+    "question": "Is the breakfast at The Telegraph Suites (Rome) worth it according to guests?",
+    "doc_id": "REV-00295"
+  },
+  {
+    "question_id": "Q044",
+    "question": "Is review REV-00307 about Hotel NH Collection Grand Sablon positive or negative, and why?",
+    "doc_id": "REV-00307"
+  },
+  {
+    "question_id": "Q045",
+    "question": "What do reviews say about the rooms at Hotel NH Collection Grand Sablon in Brussels?",
+    "doc_id": "REV-00300"
+  },
+  {
+    "question_id": "Q046",
+    "question": "Summarize review REV-00317 for Brown Beach House (Split).",
+    "doc_id": "REV-00317"
+  },
+  {
+    "question_id": "Q047",
+    "question": "What do travelers complain or rave about regarding breakfast at Brown Beach House in Split?",
+    "doc_id": "REV-00322"
+  },
+  {
+    "question_id": "Q048",
+    "question": "What evidence do we have from review REV-00332 about Hotel Opera in Zurich?",
+    "doc_id": "REV-00332"
+  },
+  {
+    "question_id": "Q049",
+    "question": "What do reviews say about the rooms at Hotel Opera in Zurich?",
+    "doc_id": "REV-00329"
+  },
+  {
+    "question_id": "Q050",
+    "question": "Is review REV-00342 about K+K Hotel Maria Theresia positive or negative, and why?",
+    "doc_id": "REV-00342"
+  },
+  {
+    "question_id": "Q051",
+    "question": "Any hidden fees or price complaints at K+K Hotel Maria Theresia (Vienna)?",
+    "doc_id": "REV-00345"
+  }
+]
