@@ -77,44 +77,24 @@ This is a **self-assessment target**, not an awarded grade. The published rubric
 
 ## 🏗️ System Architecture & Data Flow
 
-```text
-+------------------------------------------------------------------------------------------------------------+
-|                                        TRIPPILOT ARCHITECTURE                                              |
-+------------------------------------------------------------------------------------------------------------+
-|                                                                                                            |
-|  [ Kaggle schema snapshot ]  [ OpenFlights airports/routes ]  [ city cost table ]                          |
-|     reviews_snapshot.json      openflights_extract.csv          city_costs.json                            |
-|              |                          routes_extract.csv + optional Amadeus live                          |
-|              v                                                                                              |
-|  [ dlt pipeline (ingestion/hotel_reviews_pipeline.py) ]  --> DuckDB warehouse + normalized JSON            |
-|              v                                                                                              |
-|  [ src/ingest.py ]  Module-07 chunking (doc_id -> chunk_id_N, ~90 words, pos/neg sections)                 |
-|              +--> TF-IDF (512f, 1-2g) -> TruncatedSVD 64-d vectors -> data/index_cache.json                |
-|              +--> optional Elasticsearch 8.11 mirror index                                                  |
-|                                                                                                            |
-|  +---------------------------------------------------------------+                                         |
-|  | USER REQUEST (Streamlit app.py)                               |   optional: PHOTO upload                 |
-|  | "Plan a 3-day trip London->Barcelona, 400 EUR, May"           |   (vision llm -> vibe keywords)          |
-|  +---------------------------+-----------------------------------+                                        |
-|                              v                                                                            |
-|  [ 1. Entity extraction ]  origin/dest/days/budget/tier/month  (src/rag.py)                               |
-|                              v                                                                            |
-|  [ 2. AGENT TOOL ROUTER (src/tools.py) ]  search_flights | city_budget | weather_season |                 |
-|                                           route_lookup | relocation_checklist  --> tool trace             |
-|                              v                                                                            |
-|  [ 3. RETRIEVAL (src/search.py) ]  query rewriting (codes/slang) -> BM25 + vector ->                      |
-|      RRF (k=60) -> travel-domain reranker (hotel/city/sentiment/quote boosts) -> [REV-xxxxx_N] chunks     |
-|                              v                                                                            |
-|  [ 4. LLM (src/llm.py) ]  Groq llama-3.3-70b  (zero-config: deterministic grounded mock)                  |
-|      -> cited answer + STRUCTURED ITINERARY (Pydantic: flights/hotel/day-plans/relocation/cost)           |
-|                              v                                                                            |
-|  [ 5. LLM-as-a-JUDGE ]  RELEVANT / PARTIALLY_RELEVANT / NON_RELEVANT + explanation                        |
-|                              v                                                                            |
-|  [ 6. TELEMETRY (src/db.py) ]  JSONL + PostgreSQL/SQLite: question, latency, tokens, cost, city,          |
-|                              v        photo_used, judge label; feedback (+1/-1)                            |
-|                     [ Grafana 6-panel dashboard :3000 (auto-provisioned) ]                                |
-+------------------------------------------------------------------------------------------------------------+
-```
+TripPilot separates **knowledge-base preparation**, **request-time planning**, and **monitoring**. The diagram follows the main flow from left to right within each numbered layer; dashed arrows identify supporting inputs and optional paths.
+
+![TripPilot architecture: reproducible hotel-review ingestion, agent tools and hybrid retrieval, grounded answers and judging, and PostgreSQL or SQLite telemetry with separate monitoring views](docs/images/tripilot-architecture.svg)
+
+**Important boundaries:**
+- **Local retrieval:** the app searches its local `TripIndex`. Elasticsearch is an **optional ingestion mirror**, not the application's retrieval backend.
+- **Separate tool data:** routes, city costs, seasonal rules, and relocation information feed the planning tools; optional Amadeus calls can supplement the committed flight snapshot.
+- **Backend-specific monitoring:** Streamlit Monitoring supports PostgreSQL or SQLite. The provisioned **six-panel Grafana dashboard reads PostgreSQL only**. User feedback is stored with the conversation telemetry.
+- **Offline evidence:** the recorded verification uses mock answers and heuristic judgments. External model/API paths are optional; cloud deployment remains deferred.
+
+| Layer | Main implementation |
+|---|---|
+| Knowledge-base preparation | [`ingestion/hotel_reviews_pipeline.py`](ingestion/hotel_reviews_pipeline.py) → [`src/ingest.py`](src/ingest.py) |
+| Agent orchestration and planning tools | [`src/rag.py`](src/rag.py), [`src/tools.py`](src/tools.py) |
+| Query rewriting, retrieval, and re-ranking | [`src/search.py`](src/search.py); default selected by [`evaluation_results/selected_retriever.json`](evaluation_results/selected_retriever.json) |
+| Answer generation, structured itinerary, and judging | [`src/llm.py`](src/llm.py), [`src/rag.py`](src/rag.py) |
+| Interface and multimodal features | [`app.py`](app.py), [`data/audio/`](data/audio/), [`data/transcripts.txt`](data/transcripts.txt) |
+| Telemetry and dashboards | [`src/db.py`](src/db.py), [`grafana/`](grafana/) |
 
 ---
 
