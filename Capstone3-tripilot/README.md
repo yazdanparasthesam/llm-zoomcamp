@@ -1,15 +1,25 @@
 # 🧭 TripPilot — Trip & Relocation Copilot
 
-![TripPilot banner](docs/images/banner.png)
+An end-to-end travel and relocation copilot. Choose an origin, destination, month, trip length, flight budget, and travel style. TripPilot retrieves **hotel-review evidence**, runs flight and city-cost tools, and returns **review-cited hotel recommendations** with a structured itinerary or relocation checklist.
 
-**An End-to-End Agentic Travel RAG Application with Hotel-Review Grounding, Flight/Cost Agent Tools, Structured Itinerary Output, Hybrid Search + Re-ranking, dlt Ingestion, Multimodal Vision & Audio, and Real-Time Grafana Telemetry**
+Built for travelers and people planning a move, with an English interface, photo-inspired destination suggestions, and audio briefings. **No API key is required for demo mode:** the app uses committed snapshots and a clearly labelled deterministic mock when a live model is not configured.
+
+> 🌐 **Live demo:** Streamlit deployment pending.<br>
+> 📹 **Demo video:** Recording pending.
+
+<!-- After deployment, replace the pending Live demo text with the verified HTTPS app URL. -->
+<!-- Paste your own GitHub-uploaded video attachment URL on a line by itself here, outside this comment. -->
+
+[Streamlit deployment and video instructions](docs/streamlit-demo.md)
+
+![TripPilot banner](docs/images/banner.png)
 
 [![LLM Zoomcamp](https://img.shields.io/badge/DataTalks.Club-LLM%20Zoomcamp%202026-blue)](https://github.com/DataTalksClub/llm-zoomcamp)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Ready-0db7ed.svg)](docker-compose.yml)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Ready-326ce5.svg)](k8s/)
 [![Terraform](https://img.shields.io/badge/Terraform-IaC-623ce4.svg)](terraform/)
-[![PyTest](https://img.shields.io/badge/Tests-13%20Passed-success.svg)](tests/)
+[![PyTest](https://img.shields.io/badge/Tests-28%20Passed-success.svg)](tests/)
 
 ---
 
@@ -55,7 +65,7 @@ Planning a city trip — or a full relocation — means stitching together **thr
 
 ## 🏆 Evaluation Criteria Checklist
 
-This is a **self-assessment target**, not an awarded grade. The published rubric has **21 core points plus up to 5 bonus points**; final marks depend on peer review. Cloud deployment is **deferred and not claimed** for this submission. [1](https://github.com/DataTalksClub/llm-zoomcamp/blob/main/project.md)
+This is a **self-assessment target**, not an awarded grade. The published rubric has **21 core points plus up to 5 bonus points**; final marks depend on peer review. Cloud deployment is **in progress on Azure with Groq**; no cloud points are claimed before live verification. [1](https://github.com/DataTalksClub/llm-zoomcamp/blob/main/project.md)
 
 | Rubric Criterion | Max | Target / status | Implementation and Evidence | Reference Files |
 | :--- | :---: | :---: | :--- | :--- |
@@ -69,8 +79,8 @@ This is a **self-assessment target**, not an awarded grade. The published rubric
 | **8. Containerization** | 2 | **2 / 2** | `docker-compose.yml` orchestrates **app + Elasticsearch + Postgres + Grafana** with healthchecks | `docker-compose.yml`, `Dockerfile` |
 | **9. Reproducibility** | 2 | **2 / 2** | Seeded snapshot (42/123) + committed data, genuine `uv pip compile` lock, offline mock mode, 3-command startup | `data/`, `requirements.txt`, `Makefile` |
 | **10. Best Practices** | 3 | **3 / 3** | **hybrid search** (RRF k=60) ✅ implemented *and evaluated*; **document re-ranking** ✅ (+0.070 MRR lift measured); **user query rewriting** ✅ (airport codes/slang expansion + measured ablation) | `src/search.py` |
-| **Bonus 1: Cloud Deployment** | +2 | **Not claimed — deferred** | Step 11 is skipped for this submission. Fly.io, GCP/Terraform, and Render configurations are retained as optional future deployment paths; no public cloud deployment is claimed. | `fly.toml`, `docs/deploy-fly.md`, Step 11 |
-| **Bonus 2: Extra Engineering** | +3 | **+3 / 3** | (1) **Agent tools with structured Pydantic output**, (2) **Multimodal vision (photo→destination) + audio briefings**, (3) **13-test pytest suite + GitHub Actions CI + Makefile** | `src/tools.py`, `src/rag.py`, `app.py`, `tests/`, `.github/workflows/ci.yml` |
+| **Bonus 1: Cloud Deployment** | +2 | **Pending Azure verification** | Azure Container Apps + Groq, with credits-only subscription checks, managed-identity registry access, HTTPS health probes, and secret-referenced model credentials. No live URL or cloud points are claimed yet. | `azure/`, Step 11 |
+| **Bonus 2: Extra Engineering** | +3 | **+3 / 3** | (1) **Agent tools with structured Pydantic output**, (2) **Multimodal vision (photo→destination) + audio briefings**, (3) **28-test pytest suite + GitHub Actions CI + Makefile** | `src/tools.py`, `src/rag.py`, `app.py`, `tests/`, `.github/workflows/ci.yml` |
 | **TOTAL AVAILABLE POINTS** | **21 + 5 bonus** | **Pending peer review** | Targets and implementation evidence are not guaranteed or awarded marks. | |
 
 ---
@@ -85,7 +95,7 @@ TripPilot separates **knowledge-base preparation**, **request-time planning**, a
 - **Local retrieval:** the app searches its local `TripIndex`. Elasticsearch is an **optional ingestion mirror**, not the application's retrieval backend.
 - **Separate tool data:** routes, city costs, seasonal rules, and relocation information feed the planning tools; optional Amadeus calls can supplement the committed flight snapshot.
 - **Backend-specific monitoring:** Streamlit Monitoring supports PostgreSQL or SQLite. The provisioned **six-panel Grafana dashboard reads PostgreSQL only**. User feedback is stored with the conversation telemetry.
-- **Offline evidence:** the recorded verification uses mock answers and heuristic judgments. External model/API paths are optional; cloud deployment remains deferred.
+- **Offline evidence:** Steps 1–10 record mock answers and heuristic judgments. The Azure + Groq walkthrough adds live-provider checks, but cloud execution evidence is still pending.
 
 | Layer | Main implementation |
 |---|---|
@@ -135,7 +145,7 @@ Result: **354 reviews → 486 chunks** → TF-IDF(512) → TruncatedSVD **64-d**
 - **Elasticsearch 8.11** — optional mirror index of the chunked corpus (industry BM25/KNN reference); the app primary-uses a dependency-light local index so it never blocks startup.
 - **Pydantic** — typed **structured output**: `FlightOption / HotelPick / DayPlan / Itinerary` models returned by the agent.
 - **gTTS** — Google text-to-speech generating the multimodal audio briefings.
-- **Kubernetes (Kind)** — verified local cluster; **Fly.io, Terraform/GCP, and Render** — optional cloud configurations, currently deferred.
+- **Kubernetes (Kind)** — verified local cluster; **Azure Container Apps + Groq** — selected cloud walkthrough, pending verification; **Fly.io, Terraform/GCP, and Render** — optional alternatives.
 - **PyTest + GitHub Actions** — 13 automated tests; CI regenerates data, runs ingestion+e‍vals, runs tests, builds the Docker image.
 
 ---
@@ -269,10 +279,10 @@ kubectl create configmap tripilot-grafana-dashboard \
 kubectl apply -f k8s/ && kubectl port-forward svc/tripilot-app 8501:8501
 ```
 
-### Option C — Cloud (bonus): deferred
-**Step 11 is deferred. No public cloud URL or cloud-deployment bonus is claimed in this submission.** Local Docker Compose and Kind remain the recorded deployment evidence.
+### Option C — Cloud (bonus): Azure + Groq
+**Selected deployment: Azure Container Apps with a Groq API key.** Start with [the read-only Azure account checkpoint](azure/START-HERE.md), then follow [the full Azure guide](azure/README-azure.md) and Step 11. The workflow uses eligible trial/student credits with spending limit On, a separately confirmed Groq Free organization, and a local Docker image validated before provisioning.
 
-For a future cloud deployment, the [Fly.io guide](docs/deploy-fly.md), `fly.toml`, `terraform/README.md`, and `render.yaml` are retained. Review provider costs before creating resources; the presence of these configurations is not proof of a deployed service.
+**Status:** subscription/model access and deployment verification are pending. No public cloud URL or cloud bonus is claimed yet. The lean Azure app uses ephemeral SQLite; the verified local PostgreSQL/Grafana stack is separate. Optional Fly.io, GCP/Terraform, and Render configurations remain available.
 
 ### Option D — Local standalone (zero Docker)
 ```bash
@@ -335,7 +345,8 @@ tripilot/
 ├── docker-compose.yml              # app + ES + Postgres + Grafana
 ├── Dockerfile                      # deterministic pinned image
 ├── .dockerignore / .gitignore / .env.example
-├── fly.toml / render.yaml          # optional cloud configurations (deployment deferred)
+├── azure/                         # selected credits-only Azure + Groq walkthrough
+├── fly.toml / render.yaml          # optional alternative cloud configurations
 ├── data/
 │   ├── generate_snapshot.py        # seed 42  -> hotels/reviews/*.csv
 │   ├── generate_ground_truth.py    # seed 123 -> 51 GT Q&A pairs
@@ -404,7 +415,7 @@ tripilot/
 3. **Verify evaluation claims**: `evaluation_results/retrieval_eval.json` (4 approaches, dual-level) and `selected_retriever.json` (winner = sidebar default). Re-run with `make eval` — seeded, so numbers reproduce.
 4. **The negative control is intentional**: `hype_luxury` exists to fail the judge (0% RELEVANT). Don't award it for quality — it's the control that proves the eval discriminates.
 5. **Multimodal**: Copilot tab → photo expander (vision or manual vibes) and 🎧 audio briefings at the bottom.
-6. **Cloud deployment**: deferred in Step 11; no cloud bonus is claimed. Optional configurations remain available for future deployment. **Publication**: follow Step 12 and `docs/publish-github.md` for the `Capstone3-tripilot` folder in the existing course repository.
+6. **Cloud deployment**: Step 11 now covers **Azure Container Apps + Groq**; start at `azure/START-HERE.md` and keep cloud points unclaimed until the deployment is verified. **Publication**: follow Step 12 and `docs/publish-github.md` for the `Capstone3-tripilot` folder in the existing course repository.
 7. **Not ComplaintRadar/FinDocs**: new domain (travel), new data (hotel reviews + flights graph), new agent layer + structured output; only the *course-mandated skeleton* (telemetry schema, Makefile style) is shared with Capstone 2.
 
 **Disclaimer**: TripPilot summarizes a synthetic-but-schema-faithful review snapshot and public cost/fare tables for educational purposes; always re-check real prices before booking.
@@ -431,7 +442,7 @@ This walkthrough documents TripPilot's setup, ingestion, evaluation, interface, 
 | 8 | Elasticsearch mirror, Compose build, container health, app and PostgreSQL telemetry | `docs/images/08-compose-*.png` | Recorded |
 | 9 | Grafana health, PostgreSQL rows, dashboard provisioning, default datasource | `docs/images/09-grafana-*.png` | Recorded |
 | 10 | Kind cluster, workloads, cited answers, PostgreSQL feedback, synchronized six-panel Grafana dashboard | `docs/images/10-k8s-*.png` | Recorded |
-| 11 | Cloud deployment deferred; optional configuration retained | Not applicable | Deferred — not claimed |
+| 11 | Azure subscription/credits, Groq Free access, Container Apps deployment and live verification | Screenshots pending | In progress — not yet verified |
 | 12 | Publish Capstone3-tripilot, root-level CI, PR merge, matching main hashes | Screenshots pending | Pending publication |
 
 ### Step 1 — Project Layout & Fresh-Clone Verification
@@ -542,7 +553,9 @@ ls -lh evaluation_results/                # confirm retrieval, RAG-judge, and se
 ![Step 4d - committed evaluation artifacts in evaluation_results/](docs/images/04-eval-d-artifacts.png)
 
 ### Step 5 — PyTest Suite (`make test`)
-The automated suite (13 tests) guards every rubric-critical behavior: Module-07 chunking and metadata inheritance, embedding shape/normalization, query rewriting (airport codes & slang), hybrid/rerank retrieval guarantees, the agent tool belt and router, the offline end-to-end agent run, the `hype_luxury` negative control, and a Streamlit UI smoke test (AppTest boots the app and clicks the primary button).
+The captured baseline suite (13 tests at this checkpoint) guards the core project behavior: Module-07 chunking and metadata inheritance, embedding shape/normalization, query rewriting (airport codes & slang), hybrid/rerank retrieval guarantees, the agent tool belt and router, the offline end-to-end agent run, the `hype_luxury` negative control, and a Streamlit UI smoke test (AppTest boots the app and clicks the primary button).
+
+**Current suite:** the Azure preparation adds 8 mocked SDK/client checks and 7 subscription-gate checks, bringing the current total to **28 tests**. They passed in an isolated Python **3.11.14** environment with the unchanged **85-package lock**. The screenshots below retain the original **13-test** baseline; they are not relabelled as a 28-test run. No live Azure/Groq calls or evaluation regeneration were used for the regression test run.
 
 ```bash
 cd ~/Documents/tripilot                    # enter the project root
@@ -969,17 +982,122 @@ The current Grafana manifest maps the provider files into the **`datasources/`**
 
 The image is an excerpt of the completed **standalone installer invocation**, from its command through the returned shell prompt. The shell command names the installer; the synchronization output comes from the helper it invokes. **The displayed output pixels are unchanged.**
 
-### Step 11 — Cloud Deployment (Deferred)
-Cloud deployment is **skipped for this submission**. No public cloud URL, cloud-served response, or cloud-deployment bonus is claimed. The Fly.io, GCP/Terraform, and Render configurations remain available for future use. The optional commands below only inspect the standalone working copy; they do not authenticate, provision resources, or create cloud charges.
+### Step 11 — Azure Container Apps + Groq (Credits-Only Walkthrough)
+Deploy TripPilot on **Azure Container Apps**, using **Groq** for live model calls. The selected account currently needs an active subscription, so begin with [Checkpoint A](azure/START-HERE.md): activate an eligible trial/student offer, verify remaining credit and expiry, and require **spending limit On**. Azure OpenAI is not part of this setup. The full [Azure guide](azure/README-azure.md) covers portal actions, CLI installation, key creation, resource costs, model access, deployment, recovery, and cleanup.
+
+**Cost and secret boundaries:** do not upgrade Azure to Pay-As-You-Go, remove its spending limit, buy Marketplace/support products, or upgrade Groq plans to continue. Azure credits do not pay Groq bills. Verify the selected Groq organization is on Free before the smoke test. Use the hidden key prompt and the private, excluded Bicep parameter file; never show the key or parameter-file contents in screenshots. The registry may consume credits if your offer's free allowance does not cover it. Read the linked official cost guidance before provisioning.
+
+**Model preparation:** the provided dependency pins remain unchanged. The pinned SDK now uses an explicit, correctly closed HTTPX client. The cloud example selects `openai/gpt-oss-20b` **on Groq** after a Free-plan/model-access check; this does not require an OpenAI account and does not change the committed offline evaluations or local model defaults. Older Llama IDs may require different access. The current 28 tests use mocked API responses; a successful live smoke test and cloud-served answer must still be recorded.
+
+**Execute the phases in order and send screenshots after completing them.** At each confirmation prompt, verify the required settings locally and continue only if the checks pass; no intermediate assistant approval is required. Stop on errors or any paid-plan requirement. Every command is explained before any screenshot evidence. The workflow creates a new dedicated resource group, not a replacement for your local Kind cluster or an existing Azure project. Use `azure/START-HERE.md` only if you want the shorter account-only checkpoint.
 
 ```bash
-cd ~/Documents/tripilot                    # optionally inspect the standalone project used in Steps 1–10
-sed -n '1,120p' fly.toml                    # read the optional Fly configuration without deploying anything
+(                                           # isolate error handling and secret variables from the outer terminal
+set -euo pipefail                            # stop on a failed command or missing required variable
+set +x                                      # disable shell tracing before any credential is entered
+PROJECT_DIR="$HOME/Documents/tripilot"       # use the verified project folder; change to your clone's Capstone3-tripilot folder if applicable
+cd "$PROJECT_DIR"                           # keep Docker/Bicep paths relative to the project, not the monorepo root
+test -f app.py && test -f azure/check_subscription.py && test -f azure/containerapp.bicep  # require the current Azure update
+
+# CHECKPOINT A — account/CLI readiness only; no app resources are created here.
+if ! command -v az >/dev/null 2>&1; then      # install Azure CLI only when it is absent
+  curl -fsSL https://aka.ms/InstallAzureCLIDeb -o "$HOME/azure-cli-install.sh"  # download Microsoft's installer outside the project
+  less "$HOME/azure-cli-install.sh"           # review the installer; press q to leave the viewer
+  sudo bash "$HOME/azure-cli-install.sh"      # install the reviewed Azure CLI using your local administrator permission
+fi                                          # finish optional CLI installation
+az version --output json                    # record the Azure CLI version
+az login --output none                      # sign in after an eligible subscription has been activated
+az account list --query '[].{Name:name,ID:id,State:state}' --output table  # find the intended Enabled credit subscription
+read -r -p 'Azure subscription UUID: ' SUBSCRIPTION_ID  # enter the subscription ID, never an API key
+export SUBSCRIPTION_ID                      # keep the selected subscription available to the following commands
+az account set --subscription "$SUBSCRIPTION_ID"  # select the intended subscription explicitly
+python3 azure/check_subscription.py --subscription "$SUBSCRIPTION_ID"  # read-only check: require Enabled and spending limit On
+
+# Verify remaining credit/expiry in the portal; save safe evidence and continue only when these conditions are satisfied.
+read -r -p 'After confirming active credits, expiry and spending limit On, type CREDITS_ONLY: ' CREDIT_OK  # pause before proceeding
+test "$CREDIT_OK" = CREDITS_ONLY             # stop unless the credits-only constraint has been confirmed
+
+# CHECKPOINT B — local build and Groq Free-plan verification, before Azure resource creation.
+docker version                              # confirm the local Docker daemon is available
+docker build -t tripilot-app:azure-demo .    # build the actual deployment image from the pinned requirements; no secrets are build arguments
+read -r -p 'After checking the selected Groq organization is on Free, type FREE: ' GROQ_PLAN  # verify the plan in Groq Console yourself
+test "$GROQ_PLAN" = FREE                    # do not use a paid organization for this walkthrough
+export TRIPILOT_GROQ_FREE_CONFIRMED=YES       # record your manual Free-plan confirmation; this is not an automated billing check
+export LLM_PROVIDER=groq                     # use Groq as the model API provider
+export TRIPILOT_MODEL_ANSWER=openai/gpt-oss-20b  # select the explicitly tested cloud answer model, if allowed by your Free organization
+export TRIPILOT_MODEL_JUDGE=openai/gpt-oss-20b   # use an allowed cloud judge model; leave canonical evaluation files unchanged
+read -r -s -p 'Paste the Groq API key privately: ' GROQ_API_KEY  # hidden input; do not screenshot this step
+printf '\n'                                 # move to a fresh line without printing the key
+export GROQ_API_KEY                          # pass the key through the environment, not a command literal
+test -n "$GROQ_API_KEY"                     # stop if the key was not supplied
+docker run --rm --env GROQ_API_KEY --env LLM_PROVIDER --env TRIPILOT_GROQ_FREE_CONFIRMED --env TRIPILOT_MODEL_ANSWER --env TRIPILOT_MODEL_JUDGE tripilot-app:azure-demo python3 azure/check_groq.py --smoke  # verify authentication and two short live model calls without printing the key
+
+# CHECKPOINT C — choose fixed, dedicated resource names; stop before using an existing group.
+export AZURE_LOCATION=eastus                 # example region; use an allowed Container Apps/ACR region for your subscription
+export AZURE_RESOURCE_GROUP=rg-tripilot-capstone3  # dedicate this group to the cloud demo and its later cleanup
+export AZURE_ENV=cae-tripilot-capstone3        # name the Consumption-only Container Apps environment
+export AZURE_APP=ca-tripilot-capstone3        # name the public Streamlit Container App
+export AZURE_IDENTITY=id-tripilot-acr-pull    # create an identity used only for pulling this registry's images
+export AZURE_ACR="tripilot$(printf '%s' "$SUBSCRIPTION_ID" | tr -d '-' | tr '[:upper:]' '[:lower:]' | cut -c1-12)"  # derive a stable lowercase registry name; change it only if unavailable
+az extension add --name containerapp --upgrade --only-show-errors  # install/update the GA Container Apps CLI extension
+az bicep install --only-show-errors          # install the Bicep compiler used by the app template
+az bicep build --file azure/containerapp.bicep --outfile /tmp/tripilot-containerapp.json  # compile the template without deploying resources
+python3 azure/check_subscription.py --subscription "$SUBSCRIPTION_ID"  # repeat the credits-protection check immediately before provisioning
+test "$(az group exists --name "$AZURE_RESOURCE_GROUP" --subscription "$SUBSCRIPTION_ID" --output json)" = false  # refuse to reuse a group that may contain earlier resources
+test "$(az acr check-name --name "$AZURE_ACR" --query nameAvailable --output json --subscription "$SUBSCRIPTION_ID")" = true  # stop rather than overwrite or reuse an existing registry name
+read -r -p 'After reviewing registry/compute costs and credits, type DEPLOY: ' DEPLOY_OK  # explicitly approve this limited resource plan
+test "$DEPLOY_OK" = DEPLOY                  # do not create resources without your approval
+
+# CHECKPOINT D — provision only the dedicated, first-party Azure resources.
+az provider register --namespace Microsoft.App --wait --subscription "$SUBSCRIPTION_ID"  # enable the Container Apps resource provider
+az provider register --namespace Microsoft.ContainerRegistry --wait --subscription "$SUBSCRIPTION_ID"  # enable the registry provider
+az provider register --namespace Microsoft.ManagedIdentity --wait --subscription "$SUBSCRIPTION_ID"  # enable user-assigned managed identities
+az provider register --namespace Microsoft.Network --wait --subscription "$SUBSCRIPTION_ID"  # enable networking dependencies
+az group create --name "$AZURE_RESOURCE_GROUP" --location "$AZURE_LOCATION" --tags project=tripilot purpose=capstone3-demo --subscription "$SUBSCRIPTION_ID" --only-show-errors --output none  # create only the dedicated resource group
+az acr create --name "$AZURE_ACR" --resource-group "$AZURE_RESOURCE_GROUP" --location "$AZURE_LOCATION" --sku Standard --admin-enabled false --role-assignment-mode rbac --subscription "$SUBSCRIPTION_ID" --only-show-errors --output none  # create the registry; allowance eligibility must already have been checked
+ACR_SERVER="$(az acr show --name "$AZURE_ACR" --resource-group "$AZURE_RESOURCE_GROUP" --query loginServer --output tsv --subscription "$SUBSCRIPTION_ID")"  # read the actual registry hostname rather than guessing it
+ACR_ID="$(az acr show --name "$AZURE_ACR" --resource-group "$AZURE_RESOURCE_GROUP" --query id --output tsv --subscription "$SUBSCRIPTION_ID")"  # scope the image-pull role to this registry
+az acr config authentication-as-arm update --registry "$AZURE_ACR" --status enabled --subscription "$SUBSCRIPTION_ID" --only-show-errors --output none  # allow managed-identity ARM-audience authentication
+az identity create --name "$AZURE_IDENTITY" --resource-group "$AZURE_RESOURCE_GROUP" --location "$AZURE_LOCATION" --subscription "$SUBSCRIPTION_ID" --only-show-errors --output none  # create the non-password image-pull identity
+export AZURE_IDENTITY_ID="$(az identity show --name "$AZURE_IDENTITY" --resource-group "$AZURE_RESOURCE_GROUP" --query id --output tsv --subscription "$SUBSCRIPTION_ID")"  # obtain its resource ID for the Container App
+PRINCIPAL_ID="$(az identity show --name "$AZURE_IDENTITY" --resource-group "$AZURE_RESOURCE_GROUP" --query principalId --output tsv --subscription "$SUBSCRIPTION_ID")"  # obtain the identity's directory object ID for RBAC
+az role assignment create --assignee-object-id "$PRINCIPAL_ID" --assignee-principal-type ServicePrincipal --role AcrPull --scope "$ACR_ID" --subscription "$SUBSCRIPTION_ID" --only-show-errors --output none  # grant only image pull on this registry, not subscription-wide access
+az containerapp env create --name "$AZURE_ENV" --resource-group "$AZURE_RESOURCE_GROUP" --location "$AZURE_LOCATION" --enable-workload-profiles false --logs-destination none --subscription "$SUBSCRIPTION_ID" --only-show-errors --output none  # create Consumption-only hosting without a Log Analytics workspace
+export AZURE_ENV_ID="$(az containerapp env show --name "$AZURE_ENV" --resource-group "$AZURE_RESOURCE_GROUP" --query id --output tsv --subscription "$SUBSCRIPTION_ID")"  # obtain the environment resource ID
+
+# CHECKPOINT E — publish the tested image and create the app with a protected secret parameter.
+az acr login --name "$AZURE_ACR" --subscription "$SUBSCRIPTION_ID"  # authenticate Docker through your Azure login; do not enable registry admin credentials
+docker tag tripilot-app:azure-demo "$ACR_SERVER/tripilot-app:step11"  # tag the locally tested image for this registry
+docker push "$ACR_SERVER/tripilot-app:step11"  # upload the image to the dedicated private registry
+DIGEST="$(az acr repository show --name "$AZURE_ACR" --image tripilot-app:step11 --query digest --output tsv --subscription "$SUBSCRIPTION_ID")"  # obtain the pushed image's immutable digest
+export AZURE_IMAGE="$ACR_SERVER/tripilot-app@$DIGEST"  # deploy the exact uploaded image rather than a mutable latest tag
+PARAMS_CREATED=0                             # track whether this run owns a temporary credential file
+trap 'if [ "$PARAMS_CREATED" = 1 ]; then rm -f -- .azure/tripilot-parameters.json; fi; unset GROQ_API_KEY' EXIT  # remove only this run's private parameter file and clear the subshell key
+python3 azure/write_parameters.py           # write owner-only parameters under ignored .azure/; never display or screenshot their contents
+PARAMS_CREATED=1                             # mark the successfully created private file for cleanup
+az deployment group create --name tripilot-app --resource-group "$AZURE_RESOURCE_GROUP" --template-file azure/containerapp.bicep --parameters @.azure/tripilot-parameters.json --subscription "$SUBSCRIPTION_ID" --only-show-errors --output none  # deploy HTTPS, HTTP health probes, 0–1 replica, managed image pull, and a secretRef Groq key
+rm -f -- .azure/tripilot-parameters.json     # delete the private key-bearing local file after deployment
+PARAMS_CREATED=0                             # avoid deleting an unrelated file during the exit trap
+unset GROQ_API_KEY                           # remove the key from this terminal subshell after Azure stores it
+
+# CHECKPOINT F — safe evidence commands; inspect the screen before taking screenshots.
+az containerapp show --name "$AZURE_APP" --resource-group "$AZURE_RESOURCE_GROUP" --query '{state:properties.provisioningState,revision:properties.latestReadyRevisionName,hostname:properties.configuration.ingress.fqdn}' --output json --subscription "$SUBSCRIPTION_ID"  # show deployment state, ready revision, and public hostname without secret values
+az containerapp revision list --name "$AZURE_APP" --resource-group "$AZURE_RESOURCE_GROUP" --query '[].{name:name,active:properties.active,health:properties.healthState,running:properties.runningState}' --output table --subscription "$SUBSCRIPTION_ID"  # inspect active revision readiness
+APP_HOST="$(az containerapp show --name "$AZURE_APP" --resource-group "$AZURE_RESOURCE_GROUP" --query properties.configuration.ingress.fqdn --output tsv --subscription "$SUBSCRIPTION_ID")"  # read the deployed application's real hostname
+APP_URL="https://$APP_HOST"                  # construct the actual HTTPS URL
+printf 'TripPilot Azure URL: %s\n' "$APP_URL"  # print only the public URL for your browser and README
+curl -fsS --retry 5 --retry-delay 5 --retry-all-errors --max-time 90 "$APP_URL/healthz" && echo  # verify public HTTPS health, allowing a cold start
+
+# Open APP_URL, submit a cited travel request, rate it, and capture the actual model plus Monitoring tab.
+# Do not run make eval or overwrite the committed offline evaluation artifacts to obtain cloud screenshots.
+)                                           # leave the parent terminal and its other projects unchanged
 ```
 
-**Status:** deferred. The verified local Compose and Kind evidence is retained in Steps 8–10. If cloud deployment is added later, record the actual provider, working public URL, and execution evidence before claiming those points.
+**Verification to capture:** eligible credit/subscription protection, Azure CLI and read-only gate output, Groq Free/model smoke checks without secrets, successful Container App revision and HTTP health, the actual HTTPS URL, a non-mock cited response with the visible model, feedback confirmation, and cloud Monitoring. The app's green client-construction badge alone is not proof that a key or model works.
 
-**Screenshots:** not applicable — deferred.
+**Storage:** this lean Azure deployment uses ephemeral SQLite/JSONL files inside the container; it does not provision cloud PostgreSQL, Elasticsearch, or Grafana. Its totals are separate from the local Kind/Compose records and can reset after a restart, revision change, or scale-to-zero. Do not claim persistence or equality with the 12-query local PostgreSQL capture.
+
+**Screenshots:** pending. No Azure resource, live Groq inference, public cloud URL, or cloud bonus is claimed until the corresponding user-run evidence is supplied.
 
 ### Step 12 — Publish Capstone3-tripilot & Verify the Submission Hash
 Publish the current project into **`Capstone3-tripilot`** in **`yazdanparasthesam/llm-zoomcamp`**, preserving the repository's existing `main` history, module folders, and earlier capstones. Use the prepared **`tripilot-capstone3-upload.zip`** in `~/Documents`; it adds only the project folder and `.github/workflows/tripilot-ci.yml`. The workflow must be at the repository root, while its tests and builds run inside `Capstone3-tripilot`. A fresh publication clone avoids modifying the standalone project or an existing working checkout. See [the publication guide](docs/publish-github.md) for authentication and recovery rules before starting.
@@ -1040,7 +1158,7 @@ test -z "$(git status --porcelain)"          # enforce the clean-working-tree ch
 )                                           # return to the unchanged outer terminal environment
 ```
 
-**Verification to capture:** the two-path staged summary, successful branch push, passing TripPilot CI, the merged `main/Capstone3-tripilot` folder with its README, and matching full local/remote `main` hashes with a clean working tree. No cloud URL is required for this deferred-cloud submission, and no cloud-deployment points are claimed.
+**Verification to capture:** the two-path staged summary, successful branch push, passing TripPilot CI, the merged `main/Capstone3-tripilot` folder with its README, and matching full local/remote `main` hashes with a clean working tree. Include a cloud URL only after Step 11 is verified; until then, keep cloud-deployment points unclaimed.
 
 **Submission coordinates:** repository `https://github.com/yazdanparasthesam/llm-zoomcamp`, project folder `Capstone3-tripilot`, and the full 40-character final `main` hash. The printed pinned URL identifies that exact project revision. Adding screenshots or documentation after this checkpoint creates another commit; publish those changes and obtain the latest merged hash before submitting.
 
