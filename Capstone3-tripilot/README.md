@@ -6,7 +6,8 @@ An end-to-end travel and relocation copilot. Choose an origin, destination, mont
 Built for travelers and people planning a move, with an English interface, photo-inspired destination suggestions, and audio briefings. **No API key is required for demo mode:** the app uses committed snapshots and a clearly labelled deterministic mock when a live model is not configured.
 
 > 🌐 **Live demo:** [Open TripPilot](https://tripilot-chatbot.streamlit.app/)<br>
-> 📹 **Demo video:** [Watch the demo](https://github.com/user-attachments/assets/4670016d-9b90-420c-920c-f12700e65f1a)
+> 📹 **Demo video:**
+https://github.com/user-attachments/assets/4670016d-9b90-420c-920c-f12700e65f1a
 
 
 
