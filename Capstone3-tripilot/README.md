@@ -7,6 +7,7 @@ Built for travelers and people planning a move, with an English interface, photo
 
 > 🌐 **Live demo:** [Open TripPilot](https://tripilot-chatbot.streamlit.app/)<br>
 > 📹 **Demo video:**
+
 https://github.com/user-attachments/assets/4670016d-9b90-420c-920c-f12700e65f1a
 
 
