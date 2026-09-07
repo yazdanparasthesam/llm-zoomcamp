@@ -47,7 +47,7 @@ After the app opens successfully:
 For example, replace the capitalized placeholder below with the **actual deployed URL**; do not publish it unchanged:
 
 ```markdown
-> 🌐 **Live demo:** [Open TripPilot](YOUR_ACTUAL_STREAMLIT_HTTPS_URL)<br>
+> 🌐 **Live demo:** [Open TripPilot]https://tripilot-chatbot.streamlit.app/<br>
 > 📹 **Demo video:** See the recording below.
 ```
 
@@ -80,7 +80,7 @@ If your editor does not accept the video directly, upload it in a relevant issue
 The resulting structure should be:
 
 ```markdown
-> 🌐 **Live demo:** [Open TripPilot](YOUR_ACTUAL_STREAMLIT_HTTPS_URL)<br>
+> 🌐 **Live demo:** [Open TripPilot]https://tripilot-chatbot.streamlit.app/<br>
 > 📹 **Demo video:**
 
 YOUR_ACTUAL_GITHUB_VIDEO_ATTACHMENT_URL
