@@ -83,7 +83,7 @@ The resulting structure should be:
 > 🌐 **Live demo:** [Open TripPilot]https://tripilot-chatbot.streamlit.app/<br>
 > 📹 **Demo video:**
 
-YOUR_ACTUAL_GITHUB_VIDEO_ATTACHMENT_URL
+https://github.com/yazdanparasthesam/llm-zoomcamp/blob/main/Capstone3-tripilot/docs/video-demo.webm
 ```
 
 Both uppercase placeholders must be replaced with real URLs. A `sandbox:` download link from this chat is not a public GitHub video URL.
