@@ -1,100 +1,95 @@
-# Streamlit live demo and README video
+# TripPilot — Live demo user guide
 
-This guide covers a **Streamlit Community Cloud demo** of TripPilot. It does not require an Azure subscription and does not create Azure resources. The Azure walkthrough remains a separate deployment option; a Streamlit demo is not evidence of an Azure deployment.
+[**Open TripPilot**](https://tripilot-chatbot.streamlit.app/) · [**Watch the demo**](https://github.com/user-attachments/assets/4670016d-9b90-420c-920c-f12700e65f1a)
 
-## 1. Correct the deployment form
+TripPilot helps explore hotel recommendations, flight and city-cost information, itineraries, and relocation checklists. It combines hotel-review retrieval with planning tools and shows the evidence supporting its suggestions.
 
-Use these exact deployment settings:
+The public demo runs in a browser. **Visitors do not need an Azure subscription, an API key, Docker, or a local installation.** The interface is in English.
 
-| Field | Value |
+## 1. Set the trip parameters
+
+Open the live demo and use the sidebar:
+
+| Setting | What to choose |
 |---|---|
-| Repository | `yazdanparasthesam/llm-zoomcamp` |
-| Branch | `main` |
-| Main file path | **`Capstone3-tripilot/app.py`** |
-| App URL | Keep the suggested name, or choose an available name such as `tripilot-capstone3` |
-| Advanced settings → Python version | **3.11** |
-| Advanced settings → Secrets | **Leave empty for the first deployment** |
+| **Origin city** | The city the trip starts from |
+| **Destination city** | The city to explore or relocate to |
+| **Month** | The intended travel month for seasonal guidance |
+| **Trip length (days)** | The requested duration |
+| **Budget for flights (EUR)** | The flight-price limit, **not the total trip budget** |
+| **Travel style** | Budget, midrange, or luxury |
 
-The main-file path is relative to the **repository root**. `streamlit_app.py` is not the entrypoint in this project. Do not rename `app.py` just to match the form's suggestion.
+Keep **Enable agent tools** checked to include supported flight, cost, seasonal, and relocation information. The recommended retrieval setting is `hybrid_rerank`; it combines text and vector retrieval with re-ranking.
 
-Alternatively, click **Paste GitHub URL** and paste:
+Use `travel_planner` for a trip or `relocation_advisor` for relocation questions. `hype_luxury` is an evaluation-only negative control, not a recommended planning mode.
 
-<https://github.com/yazdanparasthesam/llm-zoomcamp/blob/main/Capstone3-tripilot/app.py>
+## 2. Ask a question
 
-Keep `Capstone3-tripilot/requirements.txt` beside `app.py`; do not move it to the course-repository root. Community Cloud searches the entrypoint directory for dependency files. Choose Python 3.11 to match the tested project environment and its pinned dependencies.
+Review the request text so it agrees with the sidebar settings, then click **Ask TripPilot**.
 
-Click **Save** in Advanced settings, then **Deploy**. A green “Domain is available” message only confirms that the name is available; it does not mean the app is already deployed.
+For example, select Amsterdam → Barcelona, June, 3 days, a EUR 400 flight budget, and midrange travel style. Then ask:
 
-## 2. First launch: no-key mode
+> Plan a 3-day trip from Amsterdam to Barcelona in June. My flight budget is EUR 400 and I prefer a midrange stay. Which hotel would you recommend, and what review evidence supports it?
 
-For the first launch, keep Secrets empty. The app should use its clearly labelled **offline mock mode**, committed review/route snapshots, and SQLite telemetry. You can exercise retrieval, citations, tool outputs, itinerary rendering, feedback, and the Monitoring tab without a paid model API.
+For relocation, select a destination and the `relocation_advisor` prompt strategy, then ask about living costs, a temporary hotel stay, and practical relocation considerations.
 
-Community Cloud does not launch the project's Docker Compose stack. PostgreSQL, Elasticsearch, and Grafana are not automatically deployed alongside this app. SQLite files and in-memory sessions should be treated as temporary, not durable hosted storage.
+## 3. Read the answer and its evidence
 
-If deployment fails, inspect **Manage app → Logs** and share the error text without credentials. Do not change dependency pins before checking the selected Python version and actual error.
+The response contains several useful sections:
 
-For later live Groq use, first ensure the current client-compatibility update has also been committed to GitHub. The pinned OpenAI 1.35.1 / HTTPX 0.28.1 combination requires the compatible client initialization supplied by the current project. A README-only update does not modify application code. Add any real key only through **Community Cloud Settings → Secrets**, never in Git, the README, a screenshot, or the recording. Verify actual non-mock output and model access before calling it live inference.
+- **Answer:** the recommendation and available planning facts.
+- **Structured itinerary:** the hotel pick, flight options when available, day-plan entries, estimated costs, and applicable relocation steps.
+- **Citations:** expand the review-chunk panel to inspect the retrieved text. Identifiers such as `REV-00037_1` refer to evidence in the committed review dataset; they are not booking links.
+- **Agent tool trace:** expand it to see which tools were called and what they returned.
+- **Model and Judge:** show the response mode and its relevance assessment.
 
-## 3. Add the real live-demo URL
+Check that the cited hotel and destination match the request. A relevance label is not a guarantee that every travel fact is correct or current.
 
-After the app opens successfully:
+### Understand the model mode
 
-1. Copy its actual HTTPS `streamlit.app` URL from the browser.
-2. Open `Capstone3-tripilot/README.md` on GitHub and click the pencil/Edit button.
-3. Replace the pending Live demo text with a Markdown link to that URL.
-4. Preview the README and test the link before committing.
+When the app displays **`offline-mock`** or **offline mock mode**, the answer is produced by a deterministic, evidence-based composer using committed data—not by a live LLM call. Its relevance judgment uses a heuristic.
 
-For example, replace the capitalized placeholder below with the **actual deployed URL**; do not publish it unchanged:
+If a live model is configured by the service operator, the displayed model identifies that provider/model. Visitors do not need to enter their own API credentials to use the hosted interface.
 
-```markdown
-> 🌐 **Live demo:** [Open TripPilot]https://tripilot-chatbot.streamlit.app/<br>
-> 📹 **Demo video:** See the recording below.
-```
+### Understand the estimates
 
-Do not use another project's demo URL or assume a suggested subdomain is live. Send the actual URL after deployment so the project documentation can be finalized accurately.
+- A result marked **`snapshot`** is example data from the committed dataset, not a current bookable flight offer.
+- The flight budget is separate from the displayed overall trip-cost estimate.
+- Seasonal guidance is not a live weather forecast.
+- The current structured itinerary displays **up to five day-plan entries**, even when a longer trip is selected. Verify the displayed coverage rather than assuming every requested day has a detailed plan.
+- Review snippets and cost tables have limited coverage. If evidence is missing or does not match the intended city, try a destination covered by the dataset or make the question more specific.
 
-## 4. Record your own TripPilot demo
+TripPilot does not make bookings or purchases. Check current prices, availability, and official visa/entry requirements before making travel or relocation decisions.
 
-A short 30–60 second recording is enough to show:
+## 4. Explore photo-inspired planning and audio
 
-1. The deployed URL and TripPilot's visible model mode.
-2. One travel request with origin, destination, month, trip length, and flight budget.
-3. The hotel recommendation and review citations.
-4. The structured itinerary or tool trace.
-5. Feedback submission and the Monitoring tab.
+### Photo-inspired destination suggestions
 
-Record the app window, not an entire desktop containing credentials or billing pages. Leave the mock-mode label visible if that is the mode used. Use your own TripPilot recording and links.
+Open the photo-planning section, choose a JPG or PNG, and inspect the available suggestions.
 
-GitHub supports MP4, MOV, and WebM videos. H.264 MP4 has the broadest browser compatibility. For repositories owned by a free GitHub account, keep the uploaded video under **10 MB**; paid-plan owners have a larger allowance. If your recording is too large, trim or compress it before uploading.
+If live vision is unavailable, select the photo's vibe tags manually—for example **beach**, **food**, **historic**, or **museums**. In offline mode, adding a photo alone does not perform AI image analysis. Select one of the suggested cities in the destination sidebar before requesting a plan.
 
-## 5. Embed the video player near the top of the README
+### Audio briefings
 
-1. Open `Capstone3-tripilot/README.md` in GitHub's web editor.
-2. Put the cursor on an empty line beneath the Demo video callout and above the banner/table of contents.
-3. Drag your MP4/WebM into the editor and wait for the upload to finish.
-4. Keep the generated GitHub attachment URL on a **line by itself, outside the blockquote and outside a code fence**. The usual URL begins with `https://github.com/user-attachments/assets/`.
-5. Remove the pending video text and the insertion comment, preview the rendered player, then commit.
+Open **Multimodal: destination audio briefings**, select an available briefing, and use its playback controls. The project includes prerecorded destination briefings and [text transcripts](../data/transcripts.txt) as a reading alternative.
 
-If your editor does not accept the video directly, upload it in a relevant issue or pull-request comment in **your own repository**, then copy its generated attachment URL into the README. Do not reuse the example project's attachment.
+## 5. Leave feedback
 
-The resulting structure should be:
+After reviewing a response, use its **thumbs-up or thumbs-down** control. The confirmation applies to the displayed conversation. Rate the answer based on its usefulness and evidence; do not treat the Judge label as a substitute for that review.
 
-```markdown
-> 🌐 **Live demo:** [Open TripPilot]https://tripilot-chatbot.streamlit.app/<br>
-> 📹 **Demo video:**
+## 6. Use the Monitoring and Evaluation tabs
 
-https://github.com/yazdanparasthesam/llm-zoomcamp/blob/main/Capstone3-tripilot/docs/video-demo.webm
-```
+**Monitoring** summarizes recorded activity, including query count, average latency, feedback totals, relevance labels, destinations, and a token-cost estimate. Aggregates can include activity from other demo visitors. The estimate is not a charge to the visitor or an Azure credit balance.
 
-Both uppercase placeholders must be replaced with real URLs. A `sandbox:` download link from this chat is not a public GitHub video URL.
+The hosted demo uses a lightweight telemetry backend; local files and sessions should be treated as temporary. Counts can reset when the service restarts or is redeployed. The separate six-panel Grafana dashboard belongs to the project's PostgreSQL deployment, not an automatically created service on Streamlit Community Cloud.
 
-## 6. What remains pending
+**Evaluation** displays the project's saved retrieval and prompt-strategy evaluation results. These are offline benchmark artifacts, not a new live evaluation of the current visitor's session.
 
-The live-demo URL and video remain pending until they are published and verified. The README opening uses explicit pending labels rather than unverified links. After deployment, send the live URL and either your recording or its GitHub attachment URL.
+## 7. Availability and privacy
 
-Official references:
+- If the hosting platform displays a sleeping or starting notice, use its wake/open option if offered and allow the app to start before submitting another request.
+- If a request fails, wait briefly and try again. Avoid repeated rapid submissions, which can hit service limits.
+- The application records questions, answers, and feedback for monitoring. **Do not enter passwords, API keys, payment-card details, passport numbers, or other confidential information.**
+- If a live model provider is configured, the request and retrieved context may be sent to that provider for processing.
 
-- [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud)
-- [Deployment form and Python settings](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy)
-- [Dependency-file discovery](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/app-dependencies)
-- [GitHub media attachments and limits](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files)
+For a local installation or deployment details, see the [main project README](../README.md) and [setup guide](setup.md).
